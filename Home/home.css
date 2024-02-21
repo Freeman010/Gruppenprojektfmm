@@ -3,14 +3,18 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Oxanium", sans-serif;
 }
 
 :root {
   font-size: 62.5%;
+  --primary-color: #0e1b24;
+  --secondary-color: #72203b;
+  --tertiary-color: #8d867b;
 }
 
 a {
-  color: white;
+  color: var(--tertiary-color);
 }
 
 body {
@@ -24,6 +28,9 @@ header {
   min-width: 1000px;
   display: flex;
   justify-content: space-between;
+  background-color: var(--primary-color);
+  border-bottom: var(--secondary-color) 2px solid;
+  padding: 5px;
 }
 
 .head-bar {
@@ -41,7 +48,7 @@ header {
 
 .clock {
   min-width: 100px;
-  color: white;
+  color: var(--tertiary-color);
 }
 
 /* Ressourcen-Bereich
@@ -58,13 +65,11 @@ header {
   height: 100px;
   display: flex;
   justify-content: center;
-  border: 2px dotted white;
 }
 
 /* Kinder */
 
 .raw-material {
-  background: rgba(255, 255, 0, 0.315);
   width: 300px;
   display: flex;
   justify-content: space-evenly;
@@ -72,7 +77,6 @@ header {
 }
 
 .products {
-  background: rgba(0, 128, 0, 0.301);
   width: 700px;
   display: flex;
   justify-content: space-evenly;
@@ -114,14 +118,12 @@ header {
   justify-content: center;
   position: absolute;
   /* z-index: -1; */
-  border: 2px dotted white;
 }
 
 /* Kinder */
 
 .planetes {
   width: 80vw;
-  background: rgba(0, 0, 255, 0.315);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,7 +135,6 @@ header {
 .planet {
   width: 100px;
   height: 100px;
-  border: 2px white dotted;
   border-radius: 50%;
 }
 
@@ -158,7 +159,6 @@ header {
   /* grid-column-gap: 10px; */
   /* grid-row-gap: 5px; */
   /* margin-top: 50px; */
-  border: 2px dotted white;
 }
 
 /* Kinder */
@@ -181,21 +181,21 @@ header {
   grid-area: 2 / 3 / 5 / 4;
   min-width: 250px;
   height: 400px;
-  background: rgba(255, 153, 0, 0.425);
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 5px;
+  margin-top: 20px;
 }
 
 .content-box {
   grid-area: 1 / 5 / 5 / 8;
 
-  min-width: 1000px;
+  width: 1000px;
   height: 750px;
-  background: rgba(230, 35, 35, 0.527);
+  background: var(--primary-color);
   border: 1px solid black;
   margin: 50px 25px 0 25px;
   align-self: center;
@@ -205,10 +205,29 @@ header {
 
 .chat-box {
   grid-area: 2 / 8 / 5 / 9;
-  min-width: 250px;
+  width: 250px;
   height: 500px;
-  background: rgba(255, 0, 128, 0.445);
+  background: var(--primary-color);
   border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.chat-window {
+  width: 225px;
+  height: 400px;
+  background-color: var(--tertiary-color);
+}
+
+.chat-input {
+  width: 225px;
+  height: 25px;
+  background-color: var(--tertiary-color);
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 /*  */
@@ -217,8 +236,23 @@ header {
 .btn {
   width: 100px;
   height: 35px;
-  background: grey;
+  background: var(--primary-color);
+  color: var(--tertiary-color);
+  font-weight: bold;
+  font-family: "Oxanium", sans-serif;
 }
+
+.submit-button {
+  width: 20px;
+  height: 20px;
+  background-image: url(/Grundstruktur/img/icons/send-icon.png);
+  background-size: cover;
+  background-color: transparent;
+  border: none; /* Rand entfernen */
+  cursor: pointer; /* Mauszeiger ändern */
+  text-indent: -9999px; /* Text ausblenden */
+}
+
 /*  */
 /* Footer */
 
