@@ -45,12 +45,12 @@ header {
 }
 
 /* Ressourcen-Bereich
-  1. Elternteil "ressources" erhält 100vw
-  2. Kinder "raw-material" und "products" 80vw
-  hier ist folgendes zu beachten:
-  Beim verkleinern des Bildschirms, gehen die Enkelkinder 
-  ineinander über und verformen sich -> evtl. "space-evenly" mit gap ersetzen,
-  oder feste  Pixelwerte festlegen*/
+    1. Elternteil "ressources" erhält 100vw
+    2. Kinder "raw-material" und "products" 80vw
+    hier ist folgendes zu beachten:
+    Beim verkleinern des Bildschirms, gehen die Enkelkinder 
+    ineinander über und verformen sich -> evtl. "space-evenly" mit gap ersetzen,
+    oder feste  Pixelwerte festlegen*/
 
 /* Elternteil */
 .ressources {
