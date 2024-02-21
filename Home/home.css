@@ -14,7 +14,7 @@ a {
 }
 
 body {
-  background-image: url("img/background/background-a.jpg");
+  background-image: url("/Grundstruktur/img/background/background-a.jpg");
   font-size: 1.6rem;
 }
 
@@ -81,14 +81,28 @@ header {
 
 /* Enkelkinder */
 
-.raw,
-.prod {
-  width: 4rem;
-  height: 4rem;
-  margin: 0.5rem;
-  background: grey;
-  border: 2px solid black;
-  box-sizing: border-box;
+/* .raw, */
+/* .prod { */
+/* width: 4rem; */
+/* height: 4rem; */
+/* margin: 0.5rem; */
+/* background: grey; */
+/* border: 2px solid black; */
+/* box-sizing: border-box; */
+/* } */
+
+#ressource-counter {
+  color: white;
+}
+
+.raw img {
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.prod img {
+  max-width: 4rem;
+  max-height: 4rem;
 }
 
 /* Elternteil  */
@@ -99,7 +113,7 @@ header {
   display: flex;
   justify-content: center;
   position: absolute;
-  z-index: -1;
+  /* z-index: -1; */
   border: 2px dotted white;
 }
 
@@ -123,6 +137,16 @@ header {
   border-radius: 50%;
 }
 
+.planet img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.5s ease;
+}
+
+.planet img:hover {
+  transform: translateY(-30px) scale(1.2);
+}
+
 /* Elternteil */
 
 /* Grid-Versuch */
@@ -140,6 +164,18 @@ header {
 /* Kinder */
 
 /* Grid-Versuch */
+
+.logo {
+  grid-area: 1 / 3 / 2 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px;
+  height: 200px;
+}
 
 .menu-box {
   grid-area: 2 / 3 / 5 / 4;
@@ -163,6 +199,8 @@ header {
   border: 1px solid black;
   margin: 50px 25px 0 25px;
   align-self: center;
+  position: relative;
+  z-index: 9999;
 }
 
 .chat-box {
