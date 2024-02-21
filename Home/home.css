@@ -1,3 +1,5 @@
+@import url(/Grundstruktur/colors.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +10,6 @@
 
 :root {
   font-size: 62.5%;
-  --primary-color: #0e1b24;
-  --secondary-color: #72203b;
-  --tertiary-color: #8d867b;
 }
 
 a {
