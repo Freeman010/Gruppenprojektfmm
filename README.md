@@ -24,3 +24,20 @@ Benötigte Seiten HTML/CSS
 - Militärgebäude
 
 _erstellt 19.02.2024, Marius Weber_
+
+## Log
+
+_21.02.2024 MW:_
+
+- Ändern der Grundstruktur: Section 3 enthält nun ein Grid-System, um später damit flexibler arbeiten zu können.
+- Verschieben der Grundstruktur in den Ordner Gruppenprojekt (
+  Zeitraum: 20.02.2024 - 27.02.2024)
+
+_22.02.2024 MW:_
+
+- Festlegung folgender Breakpoints:
+
+1. Standard-Design: 1920x1080 (Funktionierendes Spiel)
+2. Breakpoint 1 : 1440x900 (siehe Standard-Design)
+3. Breakpoint 2 : <1440x900 (Nur Ressourcenübersicht, Benachrichtigungen)
+4. Iphone SE : siehe Breakpoint 2
