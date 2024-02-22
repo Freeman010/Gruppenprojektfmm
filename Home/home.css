@@ -1,4 +1,4 @@
-@import url(/Grundstruktur/colors.css);
+@import url(../Grundstruktur/colors.css);
 
 * {
   margin: 0;
@@ -10,6 +10,7 @@
 
 :root {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 a {
@@ -18,7 +19,7 @@ a {
 
 body {
   width: 100vw;
-  background-image: url("/Grundstruktur/img/background/background-a.jpg");
+  background-image: url("../Grundstruktur/img/background/background-a.jpg");
   font-size: 1.6rem;
 }
 
