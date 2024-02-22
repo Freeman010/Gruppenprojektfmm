@@ -1,8 +1,6 @@
 @import url(../Grundstruktur/colors.css);
 
 .content-box {
-  grid-area: 1 / 5 / 5 / 8;
-
   width: 1000px;
   height: 1000px:;
   background: var(--primary-color);
@@ -28,7 +26,10 @@
   height: 100px;
 }
 
-.content-box div {
+.galaxy-row1,
+.galaxy-row2,
+.galaxy-row3,
+.galaxy-row4 {
   display: flex;
   align-items: center;
 }
@@ -43,8 +44,9 @@
   box-sizing: border-box;
 }
 
-.test {
+.planet-box {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 20%;
   background-color: var(--accent-color);
@@ -58,17 +60,36 @@
   padding-left: 10px;
 }
 
-.test2 {
+.planet-data {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 2px;
 }
 
 .planet-content{
-    display: flex;
-    justify-self: center;
+    display: none;
+    justify-content: center;
     align-self: center;
     margin: 5% 10%;
     width: 80%;
+    height: 80%;
     background: var(--accent-color);
+    border: 1px solid white;
+}
+
+.galaxy-row1:hover ~ .planet-content{
+    display: flex;
+}
+
+.galaxy-row2:hover ~ .planet-content{
+    display: flex;
+}
+
+.galaxy-row3:hover ~ .planet-content{
+    display: flex;
+}
+
+.galaxy-row4:hover ~ .planet-content{
+    display: flex;
 }
