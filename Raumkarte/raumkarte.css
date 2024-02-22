@@ -63,3 +63,12 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.planet-content{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 5% 10%;
+    width: 80%;
+    background: var(--accent-color);
+}
