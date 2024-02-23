@@ -39,14 +39,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 .planet-box {
   display: flex;
   align-items: center;
@@ -101,9 +93,10 @@
 }
 
 .koordinate{
+  display: flex;
+  justify-content: center;
   width: 25px;
-  background-color: white;
-  /* gap: 5px; */
+  background-color: rgba(255, 255, 255, 0.481);
 }
 
 .sonnensystem {
@@ -152,5 +145,4 @@
   transform: rotate(135deg);
   margin: 0 3px;
 }
-
 
