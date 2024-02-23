@@ -93,3 +93,6 @@
 .galaxy-row4:hover ~ .planet-content{
     display: flex;
 }
+.raumkarte{
+  border: 3px rgb(156, 247, 65) ridge;
+}
