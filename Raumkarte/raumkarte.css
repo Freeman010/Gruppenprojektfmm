@@ -53,6 +53,7 @@
   display: flex;
   width: 100%;
   padding-left: 10px;
+  justify-content: space-between;
 }
 
 .planet-data {
@@ -145,4 +146,3 @@
   transform: rotate(135deg);
   margin: 0 3px;
 }
-
