@@ -4,7 +4,7 @@
   width: 1000px;
   height: 1000px:;
   background: var(--primary-color);
-  border: 1px solid black;
+  border: 5px solid var(--accent-color);
   margin: 50px 25px 0 25px;
   align-self: center;
   position: relative;
