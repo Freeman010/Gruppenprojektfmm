@@ -64,17 +64,20 @@ header {
 /* Kinder */
 
 .raw-material {
-  width: 300px;
+  /* width: 300px; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 50px;
 }
 
 .products {
-  width: 700px;
+  /* width: 700px; */
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
+  gap: 50px;
+  margin-left: 150px;
 }
 
 /* Enkelkinder */
