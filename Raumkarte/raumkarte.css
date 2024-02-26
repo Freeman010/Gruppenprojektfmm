@@ -52,15 +52,19 @@
 .planetnumber {
   display: flex;
   width: 100%;
-  padding-left: 10px;
+  padding: 0 10px;
+  padding-top: 5px;
   justify-content: space-between;
+  align-items: center;
 }
+
 
 .planet-data {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 2px;
+  padding-bottom: 5px;
 }
 
 .planet-content{
@@ -155,15 +159,24 @@
   align-self: auto;
   margin-top: 50px;
   display: flex;
+  flex-direction: column;
   padding: 10px;
   color: white;
   font-size: smaller;
+}
+
+.legend-title{
+  border-bottom: 1px solid var(--secondary-color)
 }
 
 .legend > .alert-icons{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.alert-icons  i{
+  padding: 5px 2px;
 }
 
 
