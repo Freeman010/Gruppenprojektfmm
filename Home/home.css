@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Oxanium", sans-serif;
+  font-family: "Inconsolata", sans-serif;
 }
 
 :root {
@@ -32,6 +32,7 @@ header {
   background-color: var(--primary-color);
   border-bottom: var(--secondary-color) 2px solid;
   padding: 5px;
+  font-weight: 600;
 }
 
 .head-bar {
@@ -246,7 +247,7 @@ header {
 /* background: var(--primary-color); */
 /* color: var(--tertiary-color); */
 /* font-weight: bold; */
-/* font-family: "Oxanium", sans-serif; */
+/* font-family: "Inconsolata", sans-serif; */
 /* } */
 
 /* menu-buttons */
