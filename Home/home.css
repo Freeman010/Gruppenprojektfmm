@@ -58,6 +58,7 @@ header {
   height: 100px;
   display: flex;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 /* Kinder */
@@ -256,12 +257,16 @@ header {
   text-indent: -9999px; /* Text ausblenden */
 }
 
+.uebersicht {
+  border: 3px var(--highlight-color) ridge;
+}
+
 /*  */
 /* Footer */
 
 footer {
   width: 100vw;
   height: 100px;
-  background: rgba(128, 128, 128, 0.295);
+  background: var(--accent-color);
   margin-top: 50px;
 }
