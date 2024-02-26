@@ -97,6 +97,12 @@
   border: 3px var(--highlight-color) ridge;
 }
 
+/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
+gehighlighted ist */
+.uebersicht{
+  border: 2px outset buttonborder;
+}
+
 .koordinate{
   display: flex;
   justify-content: center;
