@@ -94,13 +94,17 @@
     display: flex;
 }
 .raumkarte{
-  border: 3px var(--highlight-color) ridge;
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+color: white;
 }
 
 /* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
 gehighlighted ist */
+
 .uebersicht{
-  border: 2px outset buttonborder;
+  --background-color: #8d867b;
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: #0e1b24;
 }
 
 .koordinate{
