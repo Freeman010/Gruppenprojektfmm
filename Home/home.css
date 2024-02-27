@@ -152,7 +152,7 @@ header {
 }
 
 .logo img {
-  width: 200px;
+  width: auto;
   max-height: 200px;
 }
 
@@ -264,8 +264,8 @@ header {
 
 .uebersicht-status {
   --edge-size: 1.25em;
-  width: 150px;
-  height: 100px;
+  width: 225px;
+  height: 140px;
   border: 0;
   color: white;
   background: var(--accent-color);
@@ -289,7 +289,7 @@ header {
 
 .uebersicht-status > h4 {
   margin-bottom: 0.8rem;
-  border-bottom: 1px white solid;
+  border-bottom: 1px var(--secondary-color) solid;
 }
 
 .chat-box {
