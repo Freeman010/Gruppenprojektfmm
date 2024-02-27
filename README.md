@@ -41,3 +41,17 @@ _22.02.2024 MW:_
 2. Breakpoint 1 : 1440x900 (siehe Standard-Design)
 3. Breakpoint 2 : <1440x900 (Nur Ressourcenübersicht, Benachrichtigungen)
 4. Iphone SE : siehe Breakpoint 2
+
+_26.02.2024 MW:_
+
+- Festlegung der Standardfont "Inconsolata"
+- Hauptmenü-Buttons mit festgelegtem Effekt und styling, folgender Code muss für
+  jede Unterseite verwendet werden:
+
+```
+uebersicht{
+ --background-color: #8d867b;
+ --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+ color: #0e1b24;
+}
+```

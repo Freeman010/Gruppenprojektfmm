@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="/Fonts/Oxanium/Oxanium-VariableFont_wght.ttf"
+      href="./Fonts/Oxanium/Oxanium-VariableFont_wght.ttf"
+    />
+    <link
+      rel="stylesheet"
+      href="./Fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf"
     />
     <title>Home</title>
     <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Header-Grundstruktur -->
@@ -93,21 +104,55 @@
             <img src="../Grundstruktur/img/icons/logo_placeholder.png" alt="" />
           </div>
           <div class="menu-box">
-            <button class="btn">Übersicht</button>
-            <button class="btn">Raumkarte</button>
-            <button class="btn">Forschung</button>
-            <button class="btn">Verteidigung</button>
-            <button class="btn">Werften</button>
-            <button class="btn">Armada</button>
-            <button class="btn">Ziviler Bau</button>
-            <button class="btn">Militärischer Bau</button>
+            <button class="btn uebersicht">Übersicht</button>
+            <a href="../Raumkarte/raumkarte.html"
+              ><button class="btn raumkarte">Raumkarte</button></a
+            >
+            <a href="#"><button class="btn forschung">Forschung</button></a>
+            <a href="#"
+              ><button class="btn verteidigung">Verteidigung</button></a
+            >
+            <a href="#"><button class="btn werften">Werften</button></a>
+            <a href="#"><button class="btn armada">Armada</button></a>
+            <a href="#"><button class="btn ziviler">Gebäude</button></a>
           </div>
-          <div class="content-box"></div>
+          <div class="content-box">
+            <div class="uebersicht-title"><h1>Übersicht</h1></div>
+            <div class="topcontent">
+              <div class="uebersicht-topcontent">
+                <h1>Willkommen <em>Playername</em>!</h1>
+              </div>
+            </div>
+            <div class="uebersicht-midcontent">
+              <div class="midcontent midcontent-row1">
+                <div class="uebersicht-status">
+                  <h4>Raumkarte</h4>
+                  <p><em>Aktive Planeten: 4</em></p>
+                </div>
+                <div class="uebersicht-status">
+                  <h4>Forschung</h4>
+                  <p><em>Aktuell keine Forschung in Betrieb</em></p>
+                </div>
+                <div class="uebersicht-status"><h4>Verteidigung</h4><p><em>Noch nicht erforscht</em></em></p></div>
+              </div>
+              <div class="midcontent midcontent-row2">
+                <div class="uebersicht-status"><h4>Werften</h4><p><em>Keine Werften in Bau</em></p></div>
+                <div class="uebersicht-status"><h4>Armada</h4><p><em>Keine Flotten in Bewegung</em></p></div>
+                <div class="uebersicht-status"><h4>Gebäude</h4><p><em>Keine Gebäude in Bau</em></p></div>
+              </div>
+            </div>
+          </div>
           <div class="chat-box">
             <div class="chat-window"></div>
             <div class="chat-input">
               <button type="submit" class="submit-button"></button>
             </div>
+          </div>
+          <div class="messages">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-envelope"></i>
+            <i class="fa-regular fa-comment"></i>
+            <i class="fa-solid fa-user-gear"></i>
           </div>
         </div>
       </section>
