@@ -16,6 +16,7 @@ gehighlighted ist */
 .researchflex {
   display: flex;
   width: 100%;
+  height: auto;
   flex-wrap: wrap;
 }
 .researchimg {
@@ -63,26 +64,57 @@ gehighlighted ist */
   flex-direction: row;
   justify-content: space-around;
 }
-.researchoverview > div > img {
+.researchoverview img {
   width: 160px;
   height: 160px;
   background-color: black;
   padding: 5px;
 }
-
-.researchoverview > div > img:hover {
-}
-
 .researchfooter {
   display: flex;
+  height: 100%;
 }
 .left {
   padding: 1%;
   flex: 4;
+  font-size: small;
 }
 .right {
   margin-top: 5%;
   width: 50%;
   height: 50%;
   flex: 1;
+}
+
+.tooltip {
+  display: none; 
+  position: absolute;
+  background-color: var(--highlight-color);
+  border: 1px solid black;
+  padding: 0;
+  margin-top: 0.5%;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.element:hover .tooltip {
+  display: block;
+}
+.forschung {
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: white;
+}
+
+
+.element img:hover {
+  transform: scale(1.05);
+}
+/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
+gehighlighted ist */
+
+.uebersicht {
+  --background-color: var(--tertiary-color);
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: #0e1b24;
 }
