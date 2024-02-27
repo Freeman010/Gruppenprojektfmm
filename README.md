@@ -55,3 +55,9 @@ uebersicht{
  color: #0e1b24;
 }
 ```
+
+_27.02.2024 MW:_
+
+### **Wichtig!**
+
+**Die home.css muss immer zuerst in den .html-Dateien eingebunden werden, damit das Hauptstyling der Seite zuerst geladen wird. Ansonsten funktionieren resets (wie z.B. der Button-reset für den uebersicht-button) nicht!**
