@@ -102,7 +102,7 @@ color: white;
 gehighlighted ist */
 
 .uebersicht{
-  --background-color: #8d867b;
+  --background-color: var(--tertiary-color);
   --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
   color: #0e1b24;
 }

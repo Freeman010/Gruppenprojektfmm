@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace, sans-serif;
 }
 
 :root {
@@ -14,7 +14,7 @@
 }
 
 a {
-  color: var(--tertiary-color);
+  color: white;
 }
 
 body {
@@ -32,7 +32,7 @@ header {
   background-color: var(--primary-color);
   border-bottom: var(--secondary-color) 2px solid;
   padding: 5px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .head-bar {
@@ -50,7 +50,7 @@ header {
 
 .clock {
   min-width: 100px;
-  color: var(--tertiary-color);
+  color: white;
 }
 
 /* Elternteil */
@@ -222,7 +222,7 @@ header {
 .uebersicht-topcontent {
   width: 75%;
   height: 400px;
-  background-image: url(/Grundstruktur/img/Uebersicht/uebersicht-hintergrund.png);
+  background-image: url(/img/uebersicht-hintergrund-2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   --edge-size: 1.25em;
@@ -345,7 +345,7 @@ header {
 
 /* menu-buttons */
 .btn {
-  --background-color: #8d867b;
+  --background-color: var(--tertiary-color);
   --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
   --border-width: 0.2em;
   --edge-size: 0.5em;
