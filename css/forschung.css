@@ -1,9 +1,5 @@
 @import url(../Grundstruktur/colors.css);
 
-/* Buttons */
-/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
-gehighlighted ist */
-
 .researchheader {
   border: solid rgb(0, 0, 0);
   width: 100%;
@@ -87,7 +83,7 @@ gehighlighted ist */
 }
 
 .tooltip {
-  display: none; 
+  display: none;
   position: absolute;
   background-color: var(--highlight-color);
   border: 1px solid black;
@@ -105,7 +101,6 @@ gehighlighted ist */
   --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
   color: white;
 }
-
 
 .element img:hover {
   transform: scale(1.05);
