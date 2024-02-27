@@ -1,5 +1,4 @@
 @import url(../Grundstruktur/colors.css);
-
 .researchheader {
     border: solid rgb(0, 0, 0);
     width: 100%;
@@ -9,30 +8,23 @@
     background-position: center;
     overflow: hidden;
 }
-
 .researchflex {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
 }
-
 .researchimg {
     /*background-color: lightblue;*/
     z-index: 99999;
     flex: 2;
 }
-
 .researchcosts {
     /*background-color: lightgreen;*/
     z-index: 99999;
     flex: 1;
     display: flex;
     flex-direction: column;
-
-
-
 }
-
 .researchheader p {
     width: 100%;
     height: 100%;
@@ -40,7 +32,6 @@
     color: white;
     z-index: 100400;
 }
-
 .researchcosts>h1 {
     text-align: center;
     font-size: xx-large;
@@ -48,24 +39,19 @@
     margin: 0;
     color: white;
 }
-
 .researchcosts th {
     color: white;
     text-align: start;
 }
-
 .researchcosts td {
     color: white;
 }
-
-
 .researchoverview {
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .researchoverview>div {
     margin: 2%;
 
@@ -74,7 +60,6 @@
     justify-content: space-around;
 
 }
-
 .researchoverview>div>img {
 
     width: 160px;
@@ -82,19 +67,16 @@
     background-color: black;
     padding: 5px;
 }
-
 .researchfooter {
     display: flex;
 }
-
 .left {
-
+padding: 1%;
     flex: 4;
 }
-
 .right {
     margin-top: 5%;
-width: 50%;
-height: 50%;
+    width: 50%;
+    height: 50%;
     flex: 1;
 }
