@@ -33,6 +33,7 @@
   margin: 0;
   color: white;
   z-index: 100400;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .researchcosts > h1 {
   text-align: center;
@@ -71,9 +72,11 @@
   height: 100%;
 }
 .left {
-  padding: 1%;
+  padding: 2%;
   flex: 4;
   font-size: small;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
 }
 .right {
   margin-top: 5%;
