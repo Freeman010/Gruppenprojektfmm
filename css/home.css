@@ -423,7 +423,7 @@ header {
 .submit-button {
   width: 20px;
   height: 20px;
-  background-image: url(../Grundstruktur/img/icons/send-icon.png);
+  background-image: url(../img/img/icons/send-icon.png);
   background-size: cover;
   background-color: transparent;
   border: none; /* Rand entfernen */
