@@ -189,7 +189,7 @@ header {
 @media screen and (max-width: 1440px) {
   .content-box {
     max-width: 750px;
-    max-height: 750px;
+    /* height: fit-content; */
     margin: 50px 50px;
   }
 }
