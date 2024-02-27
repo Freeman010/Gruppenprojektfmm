@@ -1,9 +1,5 @@
 @import url(../Grundstruktur/colors.css);
 
-/* Buttons */
-/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
-gehighlighted ist */
-
 .researchheader {
   border: solid rgb(0, 0, 0);
   width: 100%;
@@ -70,9 +66,6 @@ gehighlighted ist */
   padding: 5px;
 }
 
-.researchoverview > div > img:hover {
-}
-
 .researchfooter {
   display: flex;
 }
@@ -85,4 +78,18 @@ gehighlighted ist */
   width: 50%;
   height: 50%;
   flex: 1;
+}
+
+.forschung {
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: white;
+}
+
+/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
+gehighlighted ist */
+
+.uebersicht {
+  --background-color: var(--tertiary-color);
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: #0e1b24;
 }
