@@ -17,6 +17,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script defer src="../javascript/forschung.js"></script>
   </head>
 
   <body>
@@ -127,7 +128,7 @@
             >
           </div>
           <div class="content-box">
-            <section class="researchheader">
+            <section class="researchheader" id="r-header">
               <div class="researchflex">
                 <div class="researchimg"></div>
                 <div class="researchcosts">
@@ -168,7 +169,7 @@
                   </table>
                 </div>
                 <section class="researchfooter">
-                  <p class="left">
+                  <p class="left" id="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Fugiat illo nam explicabo consequuntur enim eum quos omnis
                     dignissimos velit, nobis eveniet neque possimus laborum, est
@@ -182,48 +183,68 @@
             <section class="researchoverview">
               <div>
                 <div class="element">
-                  <img src="../img/img/forschung/mining-box.jpg" alt="" />
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/mining-weit.jpg', 0)"
+                    class="f-bergbau"
+                  />
                   <span class="tooltip">Bergbau</span>
                 </div>
                 <div class="element">
-                  <img src="../img/img/forschung/funk-box.jpg" alt="" />
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/funk-weit.jpg', 1)"
+                    class="f-funktechnik"
+                  />
                   <span class="tooltip">Funktechnik</span>
                 </div>
                 <div class="element">
-                  <img src="../img/img/forschung/panzerung-box.jpg" alt="" />
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/panzerung-weit.jpg', 2)"
+                    class="f-panzerung"
+                  />
                   <span class="tooltip">Panzerung</span>
                 </div>
                 <div class="element">
-                  <img src="../img/img/forschung/ballistik-box.jpg" alt="" />
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/ballistik-weit.jpg', 3)"
+                    class="f-ballistik"
+                  />
                   <span class="tooltip">Ballistik</span>
                 </div>
               </div>
               <div>
                 <div class="element">
-                  <img
-                    src="../img/img/forschung/energiewaffen-box.jpg"
-                    alt=""
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/energiewaffen-weit.jpg', 4)"
+                    class="f-energiewaffen"
                   />
                   <span class="tooltip">Energiewaffen</span>
                 </div>
                 <div class="element">
-                  <img
-                    src="../img/img/forschung/schildtechnik-box.jpg"
-                    alt=""
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/schildtechnik-weit.jpg', 5)"
+                    class="f-schildtechnik"
                   />
                   <span class="tooltip">Schildtechnik</span>
                 </div>
                 <div class="element">
-                  <img
-                    src="../img/img/forschung/sprungantrieb-box.jpg"
-                    alt=""
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/sprungantrieb-weit.jpg', 6)"
+                    class="f-sprungantrieb"
                   />
                   <span class="tooltip">Sprungantriebe</span>
                 </div>
                 <div class="element">
-                  <img
-                    src="../img/img/forschung/verbrennungstriebwerke-box.jpg"
-                    alt=""
+                  <input
+                    type="button"
+                    onclick="changeImage('/img/img/forschung/verbrennungstriebwerke-weit.jpg', 7)"
+                    class="f-verbrennung"
                   />
                   <span class="tooltip">Verbrennungstriebwerke</span>
                 </div>

@@ -3,8 +3,8 @@
 .researchheader {
   border: solid rgb(0, 0, 0);
   width: 100%;
-  height: 30%;
-  background-image: url("../img/img/forschung/mining-weit.jpg");
+  height: 40%;
+  /* background-image: url("../img/img/forschung/mining-weit.jpg"); */
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -61,12 +61,49 @@
   flex-direction: row;
   justify-content: space-around;
 }
-.researchoverview img {
+.researchoverview input {
   width: 160px;
   height: 160px;
   background-color: black;
+  background-size: cover;
+  background-position: center;
   padding: 5px;
 }
+
+/* Bilder für die Input-Elemente */
+
+.f-bergbau {
+  background-image: url(../img/img/forschung/mining-box.jpg);
+}
+
+.f-funktechnik {
+  background-image: url(../img/img/forschung/funk-box.jpg);
+}
+
+.f-panzerung {
+  background-image: url(../img/img/forschung/panzerung-box.jpg);
+}
+
+.f-ballistik {
+  background-image: url(../img/img/forschung/ballistik-box.jpg);
+}
+
+.f-energiewaffen {
+  background-image: url(../img/img/forschung/energiewaffen-box.jpg);
+}
+
+.f-schildtechnik {
+  background-image: url(../img/img/forschung/schildtechnik-box.jpg);
+}
+
+.f-sprungantrieb {
+  background-image: url(../img/img/forschung/sprungantrieb-box.jpg);
+}
+
+.f-verbrennung {
+  background-image: url(../img/img/forschung/verbrennungstriebwerke-box.jpg);
+}
+
 .researchfooter {
   display: flex;
   height: 100%;
