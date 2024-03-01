@@ -22,32 +22,52 @@ const sprungantriebDescription =
 const verbrennungstriebwerkeDescription =
   "Mit der Erforschung von Verbrennungstriebwerken katapultierst du deine Flotte in die Weiten des Weltraums. Entwickle leistungsfähige Antriebe, um deine Schiffe zu beschleunigen und ferne Welten zu erreichen. Die Geschwindigkeit ist der Schlüssel zur Eroberung des unendlichen Kosmos. ";
 
+const bergbauTitle = "Bergbau Stufe X";
+const funkTitle = "Funktechnik Stufe X";
+const panzerungTitle = "Panzerung Stufe X";
+const ballistikTitle = "Ballistik Stufe X";
+const energiewaffenTitle = "Energiewaffen Stufe X";
+const schildtechnikTitle = "Schildtechnik Stufe X";
+const sprungantriebTitle = "Sprungantrieb Stufe X";
+const verbrennungTitle = "Verbrennungstriebwerke Stufe X";
+
+//Funktion//
+
 function changeImage(background, iteral) {
   let e = document.getElementById("r-header");
   e.style.backgroundImage = "url('" + background + "')";
   let descriptionElement = document.getElementById("description");
-  if (iteral == 0) {
+  let titleElement = document.getElementById("forschungs-title");
+  if (iteral == "bergbau") {
     descriptionElement.innerText = bergbauDescription;
+    titleElement.innerText = bergbauTitle;
   }
-  if (iteral == 1) {
+  if (iteral == "funk") {
     descriptionElement.innerText = funkDescription;
+    titleElement.innerText = funkTitle;
   }
-  if (iteral == 2) {
+  if (iteral == "panzerung") {
     descriptionElement.innerText = panzerungDescription;
+    titleElement.innerText = panzerungTitle;
   }
-  if (iteral == 3) {
+  if (iteral == "ballistik") {
     descriptionElement.innerText = ballistikDescription;
+    titleElement.innerText = ballistikTitle;
   }
-  if (iteral == 4) {
+  if (iteral == "energiewaffen") {
     descriptionElement.innerText = energiewaffenDescription;
+    titleElement.innerText = energiewaffenTitle;
   }
-  if (iteral == 5) {
+  if (iteral == "schildtechnik") {
     descriptionElement.innerText = schildtechnikDescription;
+    titleElement.innerText = schildtechnikTitle;
   }
-  if (iteral == 6) {
+  if (iteral == "sprungantrieb") {
     descriptionElement.innerText = sprungantriebDescription;
+    titleElement.innerText = sprungantriebTitle;
   }
-  if (iteral == 7) {
+  if (iteral == "verbrennung") {
     descriptionElement.innerText = verbrennungstriebwerkeDescription;
+    titleElement.innerText = verbrennungTitle;
   }
 }
