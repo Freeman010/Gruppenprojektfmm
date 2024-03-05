@@ -31,43 +31,126 @@ const schildtechnikTitle = "Schildtechnik Stufe X";
 const sprungantriebTitle = "Sprungantrieb Stufe X";
 const verbrennungTitle = "Verbrennungstriebwerke Stufe X";
 
-//Funktion//
+const imgBackground = '../img/img/background/background-a.jpg';
+const imgBergbau = '../img/img/forschung/mining-weit.jpg';
+const imgFunk = '../img/img/forschung/funk-weit.jpg';
+const imgPanzerung = '../img/img/forschung/panzerung-weit.jpg';
+const imgBallistik = '../img/img/forschung/ballistik-weit.jpg';
+const imgEnergieWaffen = '../img/img/forschung/energiewaffen-weit.jpg';
+const imgSchildTechnik = '../img/img/forschung/schildtechnik-weit.jpg';
+const imgSprungAntriebe = '../img/img/forschung/sprungantrieb-weit.jpg';
+const imgVerbrennungsTriebwerke = '../img/img/forschung/verbrennungstriebwerke-weit.jpg';
 
-function changeImage(background, iteral) {
-  let e = document.getElementById("r-header");
-  e.style.backgroundImage = "url('" + background + "')";
-  let descriptionElement = document.getElementById("description");
-  let titleElement = document.getElementById("forschungs-title");
-  if (iteral == "bergbau") {
-    descriptionElement.innerText = bergbauDescription;
-    titleElement.innerText = bergbauTitle;
-  }
-  if (iteral == "funk") {
-    descriptionElement.innerText = funkDescription;
-    titleElement.innerText = funkTitle;
-  }
-  if (iteral == "panzerung") {
-    descriptionElement.innerText = panzerungDescription;
-    titleElement.innerText = panzerungTitle;
-  }
-  if (iteral == "ballistik") {
-    descriptionElement.innerText = ballistikDescription;
-    titleElement.innerText = ballistikTitle;
-  }
-  if (iteral == "energiewaffen") {
-    descriptionElement.innerText = energiewaffenDescription;
-    titleElement.innerText = energiewaffenTitle;
-  }
-  if (iteral == "schildtechnik") {
-    descriptionElement.innerText = schildtechnikDescription;
-    titleElement.innerText = schildtechnikTitle;
-  }
-  if (iteral == "sprungantrieb") {
-    descriptionElement.innerText = sprungantriebDescription;
-    titleElement.innerText = sprungantriebTitle;
-  }
-  if (iteral == "verbrennung") {
-    descriptionElement.innerText = verbrennungstriebwerkeDescription;
-    titleElement.innerText = verbrennungTitle;
-  }
-}
+
+
+//Funktion//
+const e = document.getElementById("r-header");
+const descriptionElement = document.getElementById("description");
+const titleElement = document.getElementById("forschungs-title");
+const researchButtons = document.querySelectorAll(".testevent");
+e.style.backgroundImage = "url('" + imgBackground + "')";
+
+let currentBackgroundImg = imgBackground;
+
+researchButtons.forEach(button => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log(event);
+    if (event.target.className.includes("f-bergbau")) {
+      if (currentBackgroundImg != imgBergbau) {
+        descriptionElement.innerText = bergbauDescription;
+        titleElement.innerText = bergbauTitle;
+        e.style.backgroundImage = "url('" + imgBergbau + "')";
+        currentBackgroundImg = imgBergbau;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-funktechnik")) {
+      if (currentBackgroundImg != imgFunk) {
+        descriptionElement.innerText = funkDescription;
+        titleElement.innerText = funkTitle;
+        e.style.backgroundImage = "url('" + imgFunk + "')";
+        currentBackgroundImg = imgFunk;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-panzerung")) {
+      if (currentBackgroundImg != imgPanzerung) {
+        descriptionElement.innerText = panzerungDescription;
+        titleElement.innerText = panzerungTitle;
+        e.style.backgroundImage = "url('" + imgPanzerung + "')";
+        currentBackgroundImg = imgPanzerung;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-ballistik")) {
+      if (currentBackgroundImg != imgBallistik) {
+        descriptionElement.innerText = ballistikDescription;
+        titleElement.innerText = ballistikTitle;
+        e.style.backgroundImage = "url('" + imgBallistik + "')";
+        currentBackgroundImg = imgBallistik;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-energiewaffen")) {
+      if (currentBackgroundImg != imgEnergieWaffen) {
+        descriptionElement.innerText = energiewaffenDescription;
+        titleElement.innerText = energiewaffenTitle;
+        e.style.backgroundImage = "url('" + imgEnergieWaffen + "')";
+        currentBackgroundImg = imgEnergieWaffen;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-schildtechnik")) {
+      if (currentBackgroundImg != imgSchildTechnik) {
+        descriptionElement.innerText = schildtechnikDescription;
+        titleElement.innerText = schildtechnikTitle;
+        e.style.backgroundImage = "url('" + imgSchildTechnik + "')";
+        currentBackgroundImg = imgSchildTechnik;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-sprungantrieb")) {
+      if (currentBackgroundImg != imgSprungAntriebe) {
+        descriptionElement.innerText = sprungantriebDescription;
+        titleElement.innerText = sprungantriebTitle;
+        e.style.backgroundImage = "url('" + imgSprungAntriebe + "')";
+        currentBackgroundImg = imgSprungAntriebe;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+    if (event.target.className.includes("f-verbrennung")) {
+      if (currentBackgroundImg != imgVerbrennungsTriebwerke) {
+        descriptionElement.innerText = verbrennungstriebwerkeDescription;
+        titleElement.innerText = verbrennungTitle;
+        e.style.backgroundImage = "url('" + imgVerbrennungsTriebwerke + "')";
+        currentBackgroundImg = imgVerbrennungsTriebwerke;
+      }
+      else {
+        e.style.backgroundImage = "url('" + imgBackground + "')";
+        currentBackgroundImg = imgBackground;
+      }
+    }
+  });
+});
