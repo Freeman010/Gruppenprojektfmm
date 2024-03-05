@@ -17,7 +17,7 @@
 
 body {
   width: 100vw;
-  background-image: url('/Gruppenprojektfmm/img/img/background/background-a.jpg');
+  background-image: url(../img/img/background/background-a.jpg);
   font-size: 1.6rem;
 }
 
