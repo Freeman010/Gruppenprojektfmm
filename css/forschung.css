@@ -25,11 +25,23 @@
   z-index: 99999;
   flex: 1;
   display: flex;
+  padding: 15px;
   flex-direction: column;
+  align-items: end;
+}
+
+td:nth-child(even){
+  text-align: right;
+}
+
+tr>th:nth-child(2){
+  text-align: right;
 }
 
 #forschungs-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 0 0 10px 0;
+  font-weight: 800;
 }
 
 .researchheader p {
@@ -111,8 +123,18 @@
 
 .researchfooter {
   display: flex;
+  align-items: end;
   height: 100%;
 }
+
+.box-left {
+  width: 70%;
+}
+
+.box-btn{
+  width: 30%;
+}
+
 .left {
   padding: 2%;
   flex: 4;
