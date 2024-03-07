@@ -2,6 +2,18 @@
 
 //Variablen//
 
+
+
+
+
+
+
+/*
+benötigt funktion um forschung zu starten
+benötigt funktion die die playerdata aktualisiert wenn eine forschung fertiggestellt wurde
+benötigt funktion um forschung abzubrechen und ressourcen zurückzuerstatten (auch auf dem richtigem planeten)
+*/ 
+
 const bergbauDescription =
   "Im Bergbau-Modul erschließe die unendlichen Ressourcen des Weltraums. Baue auf Planeten ab, um Rohstoffe zu gewinnen und deine Flotte zu stärken. Nutze die Schätze des Universums für deine Expansion, Dominanz und den Aufbau einer mächtigen Zivilisation.\
 ";
