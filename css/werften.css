@@ -1,6 +1,7 @@
 @import url(../Grundstruktur/colors.css);
 
-h1 {
+h1,
+h4 {
   color: white;
 }
 
@@ -16,4 +17,104 @@ h1 {
   --background-color: var(--tertiary-color);
   --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
   color: #0e1b24;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.werften-title {
+  width: 80%;
+  height: 30rem;
+  background-color: #72203b;
+  margin-top: 2rem;
+}
+
+.werften-box {
+  width: 75%;
+  height: 70%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.werft {
+  width: 90%;
+  height: 33%;
+  background-color: var(--accent-color);
+  border: 1px solid white;
+  margin: 10px;
+  display: flex;
+}
+
+.werft-sidebar {
+  width: 12%;
+  height: 100%;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.btn-box {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+  width: 88%;
+  height: 100%;
+}
+
+.btn1 {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 130px;
+}
+.btn2 {
+  grid-area: 2 / 3 / 3 / 4;
+  width: 130px;
+}
+.btn3 {
+  grid-area: 2 / 4 / 3 / 5;
+  width: 130px;
+}
+.btn4 {
+  grid-area: 2 / 5 / 3 / 6;
+  width: 130px;
+}
+.btn5 {
+  grid-area: 4 / 2 / 5 / 3;
+  width: 130px;
+}
+.btn6 {
+  grid-area: 4 / 3 / 5 / 4;
+  width: 130px;
+}
+.btn7 {
+  grid-area: 4 / 4 / 5 / 5;
+  width: 130px;
+}
+.btn8 {
+  grid-area: 4 / 5 / 5 / 6;
+  width: 130px;
+}
+
+.btn9 {
+  grid-area: 3 / 2 / 4 / 3;
+  width: 130px;
+}
+.btn10 {
+  grid-area: 3 / 3 / 4 / 4;
+  width: 130px;
+}
+.btn11 {
+  grid-area: 3 / 4 / 4 / 5;
+  width: 130px;
+}
+.btn12 {
+  grid-area: 3 / 5 / 4 / 6;
+  width: 130px;
 }
