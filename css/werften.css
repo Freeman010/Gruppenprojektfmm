@@ -24,12 +24,16 @@ h4 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
 }
 
 .werften-title {
   width: 80%;
-  height: 30rem;
-  background-color: #72203b;
+  height: 50rem;
+  background-image: url(../img/img/werften/uebersicht-title.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: 2rem;
 }
 
@@ -47,15 +51,19 @@ h4 {
   width: 90%;
   height: 33%;
   background-color: var(--accent-color);
-  border: 1px solid white;
   margin: 10px;
   display: flex;
+  border-radius: 20px;
 }
 
 .werft-sidebar {
   width: 12%;
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
   text-align: center;
 }
 
@@ -67,6 +75,7 @@ h4 {
   grid-row-gap: 5px;
   width: 88%;
   height: 100%;
+  border-radius: 20px;
 }
 
 .btn1 {
