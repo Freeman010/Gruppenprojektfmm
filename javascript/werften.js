@@ -5,29 +5,6 @@ const buttonMittel = document.getElementById("change-mittel");
 const buttonGross = document.getElementById("change-gross");
 const btnContent = document.getElementById("btn-content");
 
-/* const kleineWerft =
-  '<button class="btn btn1">Kleiner Transporter</button>\n<button class="btn btn2">Leichter Jäger</button>\n<button class="btn btn3">Schwerer Jäger</button>\n<button class="btn btn4">Bomber</button>\n<button class="btn btn5">Fregatte</button>\n<button class="btn btn6">Mining Drone</button>\n<button class="btn btn7">Flaggeschütz</button>\n<button class="btn btn8">Lasergeschütz</button>';
-const mittlereWerft =
-  '<button class="btn btn1">Großer Transporter</button>\n<button class="btn btn2">Zerstörer</button>\n<button class="btn btn3">Kreuzer</button>\n<button class="btn btn4">Flugdeckkreuzer</button>\n<button class="btn btn5">Kolonieschiff</button>\n<button class="btn btn6">Bergbauschiff</button>\n<button class="btn btn7">Ionenkanone</button>\n<button class="btn btn8">Railgun</button>';
-const grosseWerft =
-  '<button class="btn btn9">Schlachtschiff</button>\n<button class="btn btn10">Trägerschiff</button>\n<button class="btn btn11">Schlachtkreuzer</button>\n<button class="btn btn12">Partikelgeschütz</button>';
- */
-/* function changeContentMittel() {
-  div.innerHTML = mittlereWerft;
-}
-buttonMittel.addEventListener("click", changeContentMittel);
-
-function changeContentKlein() {
-  div.innerHTML = kleineWerft;
-}
-buttonKlein.addEventListener("click", changeContentKlein);
-
-function changeContentGross() {
-  div.innerHTML = grosseWerft;
-}
-buttonGross.addEventListener("click", changeContentGross);
- */
-
 //angepasster Code: die verschiedenen Werften werden in einem Objekt gespeichert
 // daraufhin wird eine allgemeine Funktion erstellt,  die den Werfttyp als Argument erhält
 // und dementsprechend den content der div ändert.
@@ -52,6 +29,34 @@ buttonMittel.addEventListener("click", () => changeContent("mittel"));
 buttonGross.addEventListener("click", () => changeContent("gross"));
 
 // Ändern des Übersichtsbilds bei button-click
+
+// Für jede ID in werftTypen.klein
+const kleinerTransporter = document.getElementById("kleinerTransporter");
+const leichterJaeger = document.getElementById("leichterJaeger");
+const schwererJaeger = document.getElementById("schwererJaeger");
+const bomber = document.getElementById("bomber");
+const fregatte = document.getElementById("fregatte");
+const miningDrone = document.getElementById("miningDrone");
+const flaggeschuetz = document.getElementById("flaggeschuetz");
+const lasergeschuetz = document.getElementById("lasergeschuetz");
+
+// Für jede ID in werftTypen.mittel
+const grosserTransporter = document.getElementById("grosserTransporter");
+const zerstoerer = document.getElementById("zerstoerer");
+const kreuzer = document.getElementById("kreuzer");
+const flugdeckkreuzer = document.getElementById("flugdeckkreuzer");
+const kolonieschiff = document.getElementById("kolonieschiff");
+const bergbauschiff = document.getElementById("bergbauschiff");
+const ionenkanone = document.getElementById("ionenkanone");
+const railgun = document.getElementById("railgun");
+
+// Für jede ID in werftTypen.gross
+const schlachtschiff = document.getElementById("schlachtschiff");
+const traegerschiff = document.getElementById("traegerschiff");
+const schlachtkreuzer = document.getElementById("schlachtkreuzer");
+const partikelgeschuetz = document.getElementById("partikelgeschuetz");
+
+const werftenTitle = document.getElementById("werften-title");
 
 // Festlegung der Bildvariablen
 
@@ -88,34 +93,6 @@ const imgPaths = {
   partikelgeschuetz:
     "../img/img/werften/große_werft/partikelgeschütz/partikelgeschütz1.jpg",
 };
-
-// Für jede ID in werftTypen.klein
-const kleinerTransporter = document.getElementById("kleinerTransporter");
-const leichterJaeger = document.getElementById("leichterJaeger");
-const schwererJaeger = document.getElementById("schwererJaeger");
-const bomber = document.getElementById("bomber");
-const fregatte = document.getElementById("fregatte");
-const miningDrone = document.getElementById("miningDrone");
-const flaggeschuetz = document.getElementById("flaggeschuetz");
-const lasergeschuetz = document.getElementById("lasergeschuetz");
-
-// Für jede ID in werftTypen.mittel
-const grosserTransporter = document.getElementById("grosserTransporter");
-const zerstoerer = document.getElementById("zerstoerer");
-const kreuzer = document.getElementById("kreuzer");
-const flugdeckkreuzer = document.getElementById("flugdeckkreuzer");
-const kolonieschiff = document.getElementById("kolonieschiff");
-const bergbauschiff = document.getElementById("bergbauschiff");
-const ionenkanone = document.getElementById("ionenkanone");
-const railgun = document.getElementById("railgun");
-
-// Für jede ID in werftTypen.gross
-const schlachtschiff = document.getElementById("schlachtschiff");
-const traegerschiff = document.getElementById("traegerschiff");
-const schlachtkreuzer = document.getElementById("schlachtkreuzer");
-const partikelgeschuetz = document.getElementById("partikelgeschuetz");
-
-const werftenTitle = document.getElementById("werften-title");
 
 // Funktion zum Ändern des Bildes im div werften-title
 
