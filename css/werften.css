@@ -24,17 +24,19 @@ h4 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  min-height: 1000px;
   height: fit-content;
 }
 
 .werften-title {
-  width: 80%;
+  width: 100%;
   height: 50rem;
   background-image: url(../img/img/werften/uebersicht-title.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
+  border: 2px solid var(--accent-color);
 }
 
 .werften-box {
