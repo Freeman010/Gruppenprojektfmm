@@ -59,7 +59,33 @@ function changeContent(werftTyp) {
   btnContent.innerHTML = werftTypen[werftTyp];
 }
 
-buttonKlein.addEventListener("click", () => changeContent("klein"));
+buttonKlein.addEventListener("click", () => {
+  changeContent("klein");
+  kleinerTransporter = document.getElementById("kleinerTransporter");
+  leichterJaeger = document.getElementById("leichterJaeger");
+  schwererJaeger = document.getElementById("schwererJaeger");
+  bomber = document.getElementById("bomber");
+  fregatte = document.getElementById("fregatte");
+  miningDrone = document.getElementById("miningDrone");
+  flaggeschuetz = document.getElementById("flaggeschuetz");
+  lasergeschuetz = document.getElementById("lasergeschuetz");
+  kleinerTransporter.addEventListener("click", () =>
+    changeImageWerften("kltransporter")
+  );
+  leichterJaeger.addEventListener("click", () => changeImageWerften("ljaeger"));
+  schwererJaeger.addEventListener("click", () => changeImageWerften("sjaeger"));
+  bomber.addEventListener("click", () => changeImageWerften("bomber"));
+  fregatte.addEventListener("click", () => changeImageWerften("fregatte"));
+  miningDrone.addEventListener("click", () =>
+    changeImageWerften("miningdrone")
+  );
+  flaggeschuetz.addEventListener("click", () =>
+    changeImageWerften("flaggeschuetz")
+  );
+  lasergeschuetz.addEventListener("click", () =>
+    changeImageWerften("lasergeschuetz")
+  );
+});
 buttonMittel.addEventListener("click", () => {
   changeContent("mittel");
   grosserTransporter = document.getElementById("grosserTransporter");
@@ -96,7 +122,25 @@ buttonMittel.addEventListener("click", () => {
 
   railgun.addEventListener("click", () => changeImageWerften("railgun"));
 });
-buttonGross.addEventListener("click", () => changeContent("gross"));
+buttonGross.addEventListener("click", () => {
+  changeContent("gross");
+  schlachtschiff = document.getElementById("schlachtschiff");
+  traegerschiff = document.getElementById("traegerschiff");
+  schlachtkreuzer = document.getElementById("schlachtkreuzer");
+  partikelgeschuetz = document.getElementById("partikelgeschuetz");
+  schlachtschiff.addEventListener("click", () =>
+    changeImageWerften("schlachtschiff")
+  );
+  traegerschiff.addEventListener("click", () =>
+    changeImageWerften("traegerschiff")
+  );
+  schlachtkreuzer.addEventListener("click", () =>
+    changeImageWerften("schlachtkreuzer")
+  );
+  partikelgeschuetz.addEventListener("click", () =>
+    changeImageWerften("partikelgeschuetz")
+  );
+});
 
 // Ändern des Übersichtsbilds bei button-click
 // Für jede ID in werftTypen.klein
