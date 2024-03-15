@@ -76,6 +76,25 @@ buttonMittel.addEventListener("click", () => {
     console.log(imgPaths.grtransporter)
   );
   zerstoerer.addEventListener("click", () => changeImageWerften("zerstoerer"));
+  kreuzer.addEventListener("click", () => changeImageWerften("kreuzer"));
+
+  flugdeckkreuzer.addEventListener("click", () =>
+    changeImageWerften("flugdeckkreuzer")
+  );
+
+  kolonieschiff.addEventListener("click", () =>
+    changeImageWerften("kolonieschiff")
+  );
+
+  bergbauschiff.addEventListener("click", () =>
+    changeImageWerften("bergbauschiff")
+  );
+
+  ionenkanone.addEventListener("click", () =>
+    changeImageWerften("ionenkanone")
+  );
+
+  railgun.addEventListener("click", () => changeImageWerften("railgun"));
 });
 buttonGross.addEventListener("click", () => changeContent("gross"));
 
