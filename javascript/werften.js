@@ -178,3 +178,17 @@ const werftenTitle = document.getElementById("werften-title");
 function changeImageWerften(bild) {
   werftenTitle.style.backgroundImage = 'url("' + imgPaths[bild] + '")';
 }
+
+//Funktion zum Anpassen der Button-Texte innerhalb der Buttonbox bei kleinerem Bildschirm
+
+function adjustButtonText() {
+  const screenWidth = window.innerWidth;
+  let buttons;
+
+  if (screenWidth <= 1440) {
+    buttons = document.getElementById("flaggeschuetz");
+    buttons.innerText = "Flag";
+  }
+}
+
+adjustButtonText();
