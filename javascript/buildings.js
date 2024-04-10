@@ -9,3 +9,18 @@ benötigt funktion umd die planeten upzudaten wenn etwas fertig gebaut wurde
 
 es muss für jedes gebäude ein script erstellt werden und die entsprechenden werte eingetragen werden
 */
+class building {
+    constructor() {
+
+    }
+    metalCost;
+    energyCost;
+    LogEnergycost() {
+        console.log(this.energyCost);
+    }
+}
+class PowerPlant extends building()
+{
+
+}
+let i = PowerPlant = new PowerPlant();

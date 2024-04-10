@@ -80,9 +80,7 @@ researchButtons.forEach(button => {
        ResearchFooter(true);
       }
       else {
-        ResearchFooter(false);
-      }
-    }
+        ResearchFooter(zum
     if (event.target.className.includes("f-funktechnik")) {
       if (currentBackgroundImg != imgFunk) {
         descriptionElement.innerText = funkDescription;
