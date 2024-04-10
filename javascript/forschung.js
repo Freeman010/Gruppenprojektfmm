@@ -2,17 +2,11 @@
 
 //Variablen//
 
-
-
-
-
-
-
 /*
 benötigt funktion um forschung zu starten
 benötigt funktion die die playerdata aktualisiert wenn eine forschung fertiggestellt wurde
 benötigt funktion um forschung abzubrechen und ressourcen zurückzuerstatten (auch auf dem richtigem planeten)
-*/ 
+*/
 
 const bergbauDescription =
   "Im Bergbau-Modul erschließe die unendlichen Ressourcen des Weltraums. Baue auf Planeten ab, um Rohstoffe zu gewinnen und deine Flotte zu stärken. Nutze die Schätze des Universums für deine Expansion, Dominanz und den Aufbau einer mächtigen Zivilisation.\
@@ -43,17 +37,16 @@ const schildtechnikTitle = "Schildtechnik Stufe X";
 const sprungantriebTitle = "Sprungantrieb Stufe X";
 const verbrennungTitle = "Verbrennungstriebwerke Stufe X";
 
-const imgBackground = '../img/img/forschung/forschung-blank-weit.jpg';
-const imgBergbau = '../img/img/forschung/mining-weit.jpg';
-const imgFunk = '../img/img/forschung/funk-weit.jpg';
-const imgPanzerung = '../img/img/forschung/panzerung-weit.jpg';
-const imgBallistik = '../img/img/forschung/ballistik-weit.jpg';
-const imgEnergieWaffen = '../img/img/forschung/energiewaffen-weit.jpg';
-const imgSchildTechnik = '../img/img/forschung/schildtechnik-weit.jpg';
-const imgSprungAntriebe = '../img/img/forschung/sprungantrieb-weit.jpg';
-const imgVerbrennungsTriebwerke = '../img/img/forschung/verbrennungstriebwerke-weit.jpg';
-
-
+const imgBackground = "../img/img/forschung/forschung-blank-weit.jpg";
+const imgBergbau = "../img/img/forschung/mining-weit.jpg";
+const imgFunk = "../img/img/forschung/funk-weit.jpg";
+const imgPanzerung = "../img/img/forschung/panzerung-weit.jpg";
+const imgBallistik = "../img/img/forschung/ballistik-weit.jpg";
+const imgEnergieWaffen = "../img/img/forschung/energiewaffen-weit.jpg";
+const imgSchildTechnik = "../img/img/forschung/schildtechnik-weit.jpg";
+const imgSprungAntriebe = "../img/img/forschung/sprungantrieb-weit.jpg";
+const imgVerbrennungsTriebwerke =
+  "../img/img/forschung/verbrennungstriebwerke-weit.jpg";
 
 //Funktion//
 const costtable = document.getElementById("costtable");
@@ -67,7 +60,7 @@ rfooter.style.display = "none";
 costtable.style.display = "none";
 let currentBackgroundImg = imgBackground;
 
-researchButtons.forEach(button => {
+researchButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     console.log(event);
@@ -77,10 +70,11 @@ researchButtons.forEach(button => {
         titleElement.innerText = bergbauTitle;
         e.style.backgroundImage = "url('" + imgBergbau + "')";
         currentBackgroundImg = imgBergbau;
-       ResearchFooter(true);
+        ResearchFooter(true);
+      } else {
+        ResearchFooter(false);
       }
-      else {
-        ResearchFooter(zum
+    }
     if (event.target.className.includes("f-funktechnik")) {
       if (currentBackgroundImg != imgFunk) {
         descriptionElement.innerText = funkDescription;
@@ -88,8 +82,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgFunk + "')";
         currentBackgroundImg = imgFunk;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         ResearchFooter(false);
       }
     }
@@ -100,8 +93,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgPanzerung + "')";
         currentBackgroundImg = imgPanzerung;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         ResearchFooter(false);
       }
     }
@@ -112,8 +104,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgBallistik + "')";
         currentBackgroundImg = imgBallistik;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         e.style.backgroundImage = "url('" + imgBackground + "')";
         currentBackgroundImg = imgBackground;
         ResearchFooter(false);
@@ -126,8 +117,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgEnergieWaffen + "')";
         currentBackgroundImg = imgEnergieWaffen;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         ResearchFooter(false);
       }
     }
@@ -138,8 +128,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgSchildTechnik + "')";
         currentBackgroundImg = imgSchildTechnik;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         ResearchFooter(false);
       }
     }
@@ -150,8 +139,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgSprungAntriebe + "')";
         currentBackgroundImg = imgSprungAntriebe;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         ResearchFooter(false);
       }
     }
@@ -162,8 +150,7 @@ researchButtons.forEach(button => {
         e.style.backgroundImage = "url('" + imgVerbrennungsTriebwerke + "')";
         currentBackgroundImg = imgVerbrennungsTriebwerke;
         ResearchFooter(true);
-      }
-      else {
+      } else {
         ResearchFooter(false);
       }
     }
@@ -173,8 +160,7 @@ function ResearchFooter(bool) {
   if (bool) {
     rfooter.style.display = "flex";
     costtable.style.display = "flex";
-  }
-  else {
+  } else {
     e.style.backgroundImage = "url('" + imgBackground + "')";
     currentBackgroundImg = imgBackground;
     rfooter.style.display = "none";

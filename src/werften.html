@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="icon"
+      href="../img/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       rel="stylesheet"
       href="./Fonts/Oxanium/Oxanium-VariableFont_wght.ttf"
     />
@@ -21,6 +26,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script defer src="../javascript/werften.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet"> -->
   </head>
@@ -114,7 +120,7 @@
               ><button class="btn raumkarte">Raumkarte</button></a
             >
             <a href="../src/gebaeude.html"
-            ><button class="btn ziviler">Gebäude</button></a
+              ><button class="btn ziviler">Gebäude</button></a
             >
             <a href="../src/forschung.html"
               ><button class="btn forschung">Forschung</button></a
@@ -123,14 +129,26 @@
               ><button class="btn werften">Werften</button></a
             >
             <a href="../src/verteidigung.html"
-            ><button class="btn verteidigung">Verteidigung</button></a
+              ><button class="btn verteidigung">Verteidigung</button></a
             >
             <a href="../src/armada.html"
               ><button class="btn armada">Armada</button></a
             >
           </div>
           <div class="content-box">
-            <h1>Diese Seite befindet sich noch im Aufbau!</h1>
+            <div id="werften-title" class="werften-title">
+              
+            </div>
+            <div class="werften-box">
+              <div class="werft">
+                <div class="werft-bar">
+                  <button class="btn" id="change-klein">Kleine Werft</button>
+                  <button class="btn" id="change-mittel">Mittlere Werft</button>
+                  <button class="btn" id="change-gross">Große Werft</button>
+                </div>
+                <div class="btn-box" id="btn-content"></div>
+              </div>
+            </div>
           </div>
           <div class="chat-box">
             <div class="chat-window"></div>
@@ -148,7 +166,6 @@
       </section>
     </main>
 
-    <footer>
-    </footer>
+    <footer></footer>
   </body>
 </html>
