@@ -116,7 +116,6 @@ function handleFight(attackers, defenders) {
 }
 const clearLine = () => {
     console.clear();
-    //process.stdout.write('\x1B[2J\x1B[3J\x1B[H');
 };
 function createWarriors(warriorName, teamName) {
     console.log(`wie viele ${warriorName}s soll es im ${teamName} geben ?`)
@@ -147,25 +146,16 @@ function addUnits(arrayToAdd, UnitType, count) {
 }
 
 while (true) {
-    let attackersKnight = 0;
-    let attackersLancer = 0;
-    let attackersArcher = 0;
-    let attackersViking = 0;
 
-    let defendersKnight = 0;
-    let defendersLancer = 0;
-    let defendersArcher = 0;
-    let defendersViking = 0;
+    let attackersKnight = createWarriors("Knight", "Angreiferteam");
+    let attackersLancer = createWarriors("Lancer", "Angreiferteam");
+    let attackersArcher = createWarriors("Archer", "Angreiferteam");
+    let attackersViking = createWarriors("Viking", "Angreiferteam");
 
-    attackersKnight = createWarriors("Knight", "Angreiferteam");
-    attackersLancer = createWarriors("Lancer", "Angreiferteam");
-    attackersArcher = createWarriors("Archer", "Angreiferteam");
-    attackersViking = createWarriors("Viking", "Angreiferteam");
-
-    defendersKnight = createWarriors("Knight", "Verteidigerteam");
-    defendersLancer = createWarriors("Lancer", "Verteidigerteam");
-    defendersArcher = createWarriors("Archer", "Verteidigerteam");
-    defendersViking = createWarriors("Viking", "Verteidigerteam");
+    let defendersKnight = createWarriors("Knight", "Verteidigerteam");
+    let defendersLancer = createWarriors("Lancer", "Verteidigerteam");
+    let defendersArcher = createWarriors("Archer", "Verteidigerteam");
+    let defendersViking = createWarriors("Viking", "Verteidigerteam");
 
     addUnits(attackers, knight, attackersKnight);
     addUnits(attackers, Lancer, attackersLancer);
@@ -176,8 +166,7 @@ while (true) {
     addUnits(defenders, Lancer, defendersLancer);
     addUnits(defenders, Archer, defendersArcher);
     addUnits(defenders, Viking, defendersViking);
-    //console.log(attackers.length);
-    //console.log(defenders.length);
+
     handleFight(attackers, defenders);
     //console.log(attackers[2].attack(defenders[2]))
     break;
