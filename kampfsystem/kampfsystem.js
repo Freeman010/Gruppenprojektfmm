@@ -35,7 +35,7 @@ function handleFight(attacker, defender) {
   let count = 0;
   let defenderCounter = 0;
   while (attacker.length > 0 && defender.length > 0) {
-    console.log(count);
+    /* console.log(count); */
     if (count % 2 === 0) {
       let defenderIndex = Math.floor(Math.random() * defender.length);
       if (attacker[attackerCounter] instanceof unit) {
@@ -62,12 +62,12 @@ function handleFight(attacker, defender) {
       attackerCounter = 0;
       defenderCounter = 0;
     }
-    console.log(attacker.length);
-    console.log(defender.length);
+    /*     console.log(attacker.length);
+    console.log(defender.length); */
     count++;
   }
 }
 
 handleFight(attacker, defender);
-console.log(attacker);
-console.log(defender);
+/* console.log(attacker);
+console.log(defender); */
