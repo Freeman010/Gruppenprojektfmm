@@ -1,8 +1,10 @@
 
 class Fleet {
-    constructor() {
-
+    constructor(ships) {
+        this.fleetArray = ships;
+        this.setMaxCargo(ships);
     }
+    fleetArray;
     maxCargo = 0;
     actualCargo = 0;
     ressources = 0;
@@ -12,6 +14,15 @@ class Fleet {
             this.maxCargo = fleet.reduce((accumulator, unit) => {
                 return accumulator + unit.cargo;
             }, 0);
+        }
+    }
+    setAmmo(ammo) {
+        if (this.actualCargo + ammo <= this.maxCargo) {
+            this.actualCargo += ammo;
+            ammo += ammo;
+        }
+        else {
+            console.log("du hast nicht genug frachtraum");
         }
     }
 }
