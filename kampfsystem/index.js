@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-class Fleet {
-    fleetArray;
-    cargo;
-    constructor(fleet, cargo) {
-        this.cargo = cargo;
-        this.fleetArray = fleet;
-    }
-}
-class Cargo {
-    constructor() {
-
-    }
-    maxCargo = 0;
-    actualCargo = 0;
-    ressources = 0;
-    ammo = 0;
-    setMaxCargo(fleet) {
-        if (Array.isArray(fleet)) {
-            const totalCargo = fleet.reduce((accumulator, unit) => {
-                return accumulator + unit.cargo;
-            }, 0);
-        }
-    }
-}
-=======
 /*
 1. Erstellen von vorgefertigten Flotten, die der Spieler sich auswählen kann
 2. Zwei Anfangsflotten aus denen gewählt werden kann */
@@ -33,5 +7,27 @@ class Cargo {
 
 
 
+class Fleet {
+    fleetArray;
+    cargo;
+    constructor(fleet, cargo) {
+        this.cargo = cargo;
+        this.fleetArray = fleet;
+    }
+}
+class Fleet {
+    constructor(ships) {
 
->>>>>>> 4e28d0e1963da0cd2fa58b5ba7cbb6d8e6f4f66a
+    }
+    maxCargo = 0;
+    actualCargo = 0;
+    ressources = 0;
+    ammo = 0;
+    setMaxCargo(fleet) {
+        if (Array.isArray(fleet)) {
+            this.maxCargo = fleet.reduce((accumulator, unit) => {
+                return accumulator + unit.cargo;
+            }, 0);
+        }
+    }
+}
