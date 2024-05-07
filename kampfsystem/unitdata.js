@@ -3,6 +3,7 @@ import Unit from './unit.js';
 class LeichterJaeger extends Unit {
   constructor() {
     super();
+    this.name = "Leichter Jäger";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -20,6 +21,7 @@ class LeichterJaeger extends Unit {
 class SchwererJaeger extends Unit {
   constructor() {
     super();
+    this.name = "Schwerer Jäger";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -37,6 +39,7 @@ class SchwererJaeger extends Unit {
 class Bomber extends Unit {
   constructor() {
     super();
+    this.name = "Bomber";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -54,6 +57,7 @@ class Bomber extends Unit {
 class KleinerTransporter extends Unit {
   constructor() {
     super();
+    this.name = "kleiner Transporter";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -71,6 +75,7 @@ class KleinerTransporter extends Unit {
 class MiningDrohne extends Unit {
   constructor() {
     super();
+    this.name = "Mining Drohne";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -88,6 +93,7 @@ class MiningDrohne extends Unit {
 class Fregatte extends Unit {
   constructor() {
     super();
+    this.name = "Fregatte";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -105,6 +111,7 @@ class Fregatte extends Unit {
 class GrosserTransporter extends Unit {
   constructor() {
     super();
+    this.name = "grosser Transporter";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -122,6 +129,7 @@ class GrosserTransporter extends Unit {
 class Zerstörer extends Unit {
   constructor() {
     super();
+    this.name = "Zerstörer";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -139,6 +147,7 @@ class Zerstörer extends Unit {
 class Kreuzer extends Unit {
   constructor() {
     super();
+    this.name = "Kreuzer";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -156,6 +165,7 @@ class Kreuzer extends Unit {
 class FlugDeckKreuzer extends Unit {
   constructor() {
     super();
+    this.name = "Flugdeckkreuzer";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -173,6 +183,7 @@ class FlugDeckKreuzer extends Unit {
 class KolonieSchiff extends Unit {
   constructor() {
     super();
+    this.name = "Kolonieschiff";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -190,6 +201,7 @@ class KolonieSchiff extends Unit {
 class BergBauSchiff extends Unit {
   constructor() {
     super();
+    this.name = "Bergbauschiff";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -207,6 +219,7 @@ class BergBauSchiff extends Unit {
 class SchlachtSchiff extends Unit {
   constructor() {
     super();
+    this.name = "Schlachtschiff";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -224,6 +237,7 @@ class SchlachtSchiff extends Unit {
 class SchlachtKreuzer extends Unit {
   constructor() {
     super();
+    this.name = "Schlachtkreuzer";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -241,6 +255,7 @@ class SchlachtKreuzer extends Unit {
 class TrägerSchiff extends Unit {
   constructor() {
     super();
+    this.name = "Trägerschiff";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -258,6 +273,7 @@ class TrägerSchiff extends Unit {
 class FlakGeschütz extends Unit {
   constructor() {
     super();
+    this.name = "Flakgeschütz";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -275,6 +291,7 @@ class FlakGeschütz extends Unit {
 class Artillerie extends Unit {
   constructor() {
     super();
+    this.name = "Artillerie";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -292,6 +309,7 @@ class Artillerie extends Unit {
 class IonenKanone extends Unit {
   constructor() {
     super();
+    this.name = "Ionenkanone";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -309,6 +327,7 @@ class IonenKanone extends Unit {
 class LaserGeschütz extends Unit {
   constructor() {
     super();
+    this.name = "Lasergeschütz";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -326,6 +345,7 @@ class LaserGeschütz extends Unit {
 class Railgun extends Unit {
   constructor() {
     super();
+    this.name = "Railgun";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -343,6 +363,7 @@ class Railgun extends Unit {
 class PartikelKanone extends Unit {
   constructor() {
     super();
+    this.name = "Partikelkanone";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
@@ -360,6 +381,7 @@ class PartikelKanone extends Unit {
 class PlanetarerSchildGenerator extends Unit {
   constructor() {
     super();
+    this.name = "Planetarer Schildgenerator";
     this.steelcosts = 100;
     this.chemicalcost = 50;
     this.energycosts = 75;
