@@ -519,3 +519,19 @@ export default {
   PartikelKanone,
   PlanetarerSchildGenerator,
 };
+
+
+let onlyShips = [
+  unitdata.LeichterJaeger,
+  unitdata.SchwererJaeger,
+  unitdata.Bomber,
+  unitdata.KleinerTransporter,
+  unitdata.Fregatte,
+  unitdata.GrosserTransporter,
+  unitdata.Zerstörer,
+  unitdata.Kreuzer,
+  unitdata.FlugDeckKreuzer,
+  unitdata.SchlachtSchiff,
+  unitdata.SchlachtKreuzer,
+  unitdata.TrägerSchiff
+];

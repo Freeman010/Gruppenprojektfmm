@@ -1,10 +1,8 @@
 import unitdata from "./unitdata.js";
-import unit from "./unit.js";
-
 
 const currentResources = {
     steel: 4000
-}
+};
 
 let allShips = [];
 for (let className in unitdata) {
