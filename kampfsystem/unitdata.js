@@ -495,6 +495,22 @@ class PlanetarerSchildGenerator extends Unit {
     this.unittype = Unit.unittype.planetarerschildgenerator;
   }
 }
+
+const onlyShips = [
+  LeichterJaeger,
+  SchwererJaeger,
+  Bomber,
+  KleinerTransporter,
+  Fregatte,
+  GrosserTransporter,
+  Zerstörer,
+  Kreuzer,
+  FlugDeckKreuzer,
+  SchlachtSchiff,
+  SchlachtKreuzer,
+  TrägerSchiff,
+];
+
 export default {
   LeichterJaeger,
   SchwererJaeger,
@@ -518,20 +534,6 @@ export default {
   Railgun,
   PartikelKanone,
   PlanetarerSchildGenerator,
+  onlyShips,
 };
 
-
-let onlyShips = [
-  unitdata.LeichterJaeger,
-  unitdata.SchwererJaeger,
-  unitdata.Bomber,
-  unitdata.KleinerTransporter,
-  unitdata.Fregatte,
-  unitdata.GrosserTransporter,
-  unitdata.Zerstörer,
-  unitdata.Kreuzer,
-  unitdata.FlugDeckKreuzer,
-  unitdata.SchlachtSchiff,
-  unitdata.SchlachtKreuzer,
-  unitdata.TrägerSchiff
-];
