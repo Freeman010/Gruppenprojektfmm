@@ -33,6 +33,14 @@ class Fleet {
 /*  Kleine Werft:   Kleiner Transporter, Leichter Jaeger, Schwerer Jaeger, Bomber, Fregatte
     Mittlere Werft: Großer Transporter, Zerstörer, Kreuzer, Flugdeckkreuzer
 
-
+relevante Werte:
+this.name = "Fregatte";
+this.steelcosts = 5000;
+this.hull = 5000;
+this.shield = 1000;
+this.firepower = 500;
+this.ammoconsume = 100;
+this.cargo = 5000;
+this.rapidfirevsflakgeschütz = 5;
 
 
