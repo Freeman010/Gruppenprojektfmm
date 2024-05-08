@@ -232,7 +232,7 @@ header {
   background-size: cover;
   background-color: transparent;
   border: none; /* Rand entfernen */
-  cursor: pointer; /* Mauszeiger ändern */
+  cursor: pointer; /* Mauszeiger aendern */
   text-indent: -9999px; /* Text ausblenden */
 }
 

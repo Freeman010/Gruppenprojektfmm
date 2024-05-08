@@ -13,10 +13,64 @@ export default class Unit {
     static hangaring // if negative the unit use hangarslots, if positive unit have hangarslots
     static cargo;
     static unittype;
+    static attackEnergy;
+
+    dmgversusleichterjaeger = 0;
+    dmgversusschwererjaeger = 0;
+    dmgversusbomber = 0;
+    dmgversusfregatte = 0;
+    dmgversuskleinertransporter = 0;
+    dmgversusminingdrohne = 0;
+
+    dmgversusgrossertransporter = 0;
+    dmgversuszerstörer = 0;
+    dmgversuskreuzer = 0;
+    dmgversusflugdeckkreuzer = 0;
+    dmgversuskolonieschiff = 0;
+    dmgversusbergbauschiff = 0;
+
+    dmgversusschlachtschiff = 0;
+    dmgversusschlachtkreuzer = 0;
+    dmgversustraegerschiff = 0;
+
+    dmgversusflakgeschütz = 0;
+    dmgversusartillerie = 0;
+    dmgversusionenkanone = 0;
+    dmgversuslasergeschütz = 0;
+    dmgversusrailgun = 0;
+    dmgversuspartikelkanone = 0;
+    dmgversusplanetarerschildgenerator = 0;
+
+    ///Rapidfire
+    rapidfirevsleichterjaeger = 1;
+    rapidfirevsschwererjaeger = 1;
+    rapidfirevsbomber = 1;
+    rapidfirevsfregatte = 1;
+    rapidfirevskleinertransporter = 1;
+    rapidfirevsminingdrohne = 1;
+
+    rapidfirevsgroßertransporter = 1;
+    rapidfirevszerstörer = 1;
+    rapidfirevskreuzer = 1;
+    rapidfirevsflugdeckkreuzer = 1;
+    rapidfirevskolonieschiff = 1;
+    rapidfirevsbergbauschiff = 1;
+
+    rapidfirevsschlachtschiff = 1;
+    rapidfirevsschlachtkreuzer = 1;
+    rapidfirevstraegerschiff = 1;
+
+    rapidfirevsflakgeschütz = 1;
+    rapidfirevsartillerie = 1;
+    rapidfirevsionenkanone = 1;
+    rapidfirevslasergeschütz = 1;
+    rapidfirevsrailgun = 1;
+    rapidfirevspartikelkanone = 1;
+    rapidfirevsplanetarerschildgenerator = 1;
 
     static unittype = {
-        leichterjäger: 1,
-        schwererjäger: 2,
+        leichterjaeger: 1,
+        schwererjaeger: 2,
         bomber: 3,
         fregatte: 4,
         kleinertransporter: 5,
@@ -31,7 +85,7 @@ export default class Unit {
 
         schlachtschiff: 13,
         schlachtkreuzer: 14,
-        trägerschiff: 15,
+        traegerschiff: 15,
 
         flakgeschütz: 16,
         artillerie: 17,
@@ -42,10 +96,63 @@ export default class Unit {
         planetarerschildgenerator: 22
     }
 
+    damageVersus(enemy) {
+        //console.log(enemy);
+        switch (enemy.unittype) {
+            case 1:
+                return [this.dmgversusleichterjaeger, this.rapidfirevsleichterjaeger];
+            case 2:
+                return [this.dmgversusschwererjaeger, this.rapidfirevsschwererjaeger];
+            case 3:
+                return [this.dmgversusbomber, this.rapidfirevsbomber];
+            case 4:
+                return [this.dmgversusfregatte, this.rapidfirevsfregatte];
+            case 5:
+                return [this.dmgversuskleinertransporter, this.rapidfirevskleinertransporter];
+            case 6:
+                return [this.dmgversusminingdrohne, this.rapidfirevsminingdrohne];
+            case 7:
+                return [this.dmgversusgrossertransporter, this.rapidfirevsgroßertransporter];
+            case 8:
+                return [this.dmgversuszerstörer, this.rapidfirevszerstörer];
+            case 9:
+                return [this.dmgversuskreuzer, this.rapidfirevskreuzer];
+            case 10:
+                return [this.dmgversusflugdeckkreuzer, this.rapidfirevsflugdeckkreuzer];
+            case 11:
+                return [this.dmgversuskolonieschiff, this.rapidfirevskolonieschiff];
+            case 12:
+                return [this.dmgversusbergbauschiff, this.rapidfirevsbergbauschiff];
+            case 13:
+                return [this.dmgversusschlachtschiff, this.rapidfirevsschlachtschiff];
+            case 14:
+                return [this.dmgversusschlachtkreuzer, this.rapidfirevsschlachtkreuzer];
+            case 15:
+                return [this.dmgversustraegerschiff, this.rapidfirevstraegerschiff];
+            case 16:
+                return [this.dmgversusflakgeschütz, this.rapidfirevsflakgeschütz];
+            case 17:
+                return [this.dmgversusartillerie, this.rapidfirevsartillerie];
+            case 18:
+                return [this.dmgversusionenkanone, this.rapidfirevsionenkanone];
+            case 19:
+                return [this.dmgversuslasergeschütz, this.rapidfirevslasergeschütz];
+            case 20:
+                return [this.dmgversusrailgun, this.rapidfirevsrailgun];
+            case 21:
+                return [this.dmgversuspartikelkanone, this.rapidfirevspartikelkanone];
+            case 22:
+                return [this.dmgversusplanetarerschildgenerator, this.rapidfirevsplanetarerschildgenerator];
+            default:
+                return [0, 0];
+        }
+    }
     angriff(gegner) {
         let isDead;
-        let verbleibenderSchild = gegner.shield - this.firepower;
-        console.log(`${this.name} greift ${gegner.name} an und fügt ${this.firepower} Schaden zu.`)
+        gegner.shield -= this.firepower + this.damageVersus(gegner)[0];
+        let verbleibenderSchild = gegner.shield;
+        console.log(`${this.name} greift ${gegner.name} an und fügt ${this.firepower + this.damageVersus(gegner)[0]} Schaden zu.`)
+        console.log(this.damageVersus(gegner)[0]);
         if (verbleibenderSchild < 0) {
             gegner.hull += verbleibenderSchild;
             gegner.shield = 0;
@@ -54,89 +161,32 @@ export default class Unit {
             gegner.hull = 0;
             isDead = true;
             console.log(`${gegner.name} wurde vernichtet!`);
+
         } else {
+            if (this.damageVersus(gegner)[1] > 1 && this.attackEnergy > 0) {
+                this.attackEnergy -= 100 / this.damageVersus(gegner)[1]
+                isDead = this.angriff(gegner)
+            }
             isDead = false;
             console.log(`${gegner.name} hat noch ${gegner.hull} Hüllenpunkte und ${gegner.shield} Schildpunkte übrig.`)
+        }
+        if (this.damageVersus(gegner)[1] > 1) {
+
         }
         return isDead;
 
 
     }
 
+    checkAmmo(fleet) {
+        if (this.ammoconsume <= fleet.ammo) {
+            fleet.ammo -= this.ammoconsume;
+            return true;
+        }
+        else {
+            return false;
 
-    get(propertyName) {
-        return this[propertyName];
-    }
-
-    set(propertyName, value) {
-        this[propertyName] = value;
-    }
-
-    getsteelcost() {
-        return this.steelcosts;
-    }
-    setsteelcost(value) {
-        this.steelcosts = value;
-    }
-    getchemicalcosts() {
-        return this.chemicalcost;
-    }
-    setchemicalcosts(value) {
-        this.chemicalcost = value;
-    }
-    getenergycosts() {
-        return this.energycosts;
-    }
-    setenergycosts(value) {
-        this.energycosts = value;
-    }
-    getfirepower() {
-        return this.firepower;
-    }
-    setfirepower(value) {
-        this.firepower = value;
-    }
-    gethull() {
-        return this.hull;
-    }
-    sethull(value) {
-        this.hull = value;
-    }
-    getcshield() {
-        return this.shield;
-    }
-    setshield(value) {
-        this.shield = value;
-    }
-    getfuelconsume() {
-        return this.fuelconsume;
-    }
-    setfuelconsume(value) {
-        this.fuelconsume = value;
-    }
-    getammoconsume() {
-        return this.ammoconsume;
-    }
-    setamoconsume(value) {
-        this.ammoconsume = value;
-    }
-    gethangar() {
-        return this.hangaring;
-    }
-    sethangar(value) {
-        this.hangaring = value;
-    }
-    getcargo() {
-        return this.cargo;
-    }
-    setcargo(value) {
-        this.cargo = value;
-    }
-    getunittype() {
-        return this.unittype;
-    }
-    setcunittype(value) {
-        this.unittype = value;
+        }
     }
 }
 /*

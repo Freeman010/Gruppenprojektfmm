@@ -4,7 +4,7 @@ class LeichterJaeger extends Unit {
   constructor() {
     super();
     this.attackenergy = 100;
-    this.name = "Leichter Jäger";
+    this.name = "Leichter Jaeger";
     this.steelcosts = 200;
     this.mikroshipkosten = 0;
     this.chemicalcost = 50;
@@ -28,7 +28,7 @@ class SchwererJaeger extends Unit {
   constructor() {
     super();
     this.attackenergy = 100;
-    this.name = "Schwerer Jäger";
+    this.name = "Schwerer Jaeger";
     this.steelcosts = 800;
     this.mikroshipkosten = 100;
     this.chemicalcost = 200;
@@ -66,12 +66,12 @@ class Bomber extends Unit {
     this.hangaring = -3;
     this.cargo = 500;
     this.unittype = Unit.unittype.bomber;
-    this.dmgversusleichterjäger = -950;
-    this.dmgversusschwererjäger = -950;
+    this.dmgversusleichterjaeger = -950;
+    this.dmgversusschwererjaeger = -950;
     this.rapidfirevszerstörer = 10;
     this.rapidfirevsschlachtschiff = 20;
     this.rapidfirevsschlachtkreuzer = 20;
-    this.rapidfirevsträgerschiff = 20;
+    this.rapidfirevstraegerschiff = 20;
     this.rapidfirevsflugdeckkreuzer = 10;
     this.rapidfirevsbergbauschiff = 10;
     this.rapidfirevsartillerie = 10;
@@ -181,8 +181,8 @@ class Zerstörer extends Unit {
     this.hangaring = 12;
     this.cargo = 5000;
     this.unittype = Unit.unittype.zerstörer;
-    this.dmgversusleichterjäger = (this.firepower / 100) * -90;
-    this.dmgversusschwererjäger = (this.firepower / 100) * -95;
+    this.dmgversusleichterjaeger = (this.firepower / 100) * -90;
+    this.dmgversusschwererjaeger = (this.firepower / 100) * -95;
     this.dmgversusbomber = (this.firepower / 100) * -90;
     this.rapidfirevsfregatte = 5;
   }
@@ -290,8 +290,8 @@ class SchlachtSchiff extends Unit {
     this.cargo = 200000;
     this.unittype = Unit.unittype.schlachtschiff;
     this.dmgversusbomber = (this.firepower / 100) * -99;
-    this.dmgversusleichterjäger = (this.firepower / 100) * -99.9;
-    this.dmgversusschwererjäger = (this.firepower / 100) * -99.9;
+    this.dmgversusleichterjaeger = (this.firepower / 100) * -99.9;
+    this.dmgversusschwererjaeger = (this.firepower / 100) * -99.9;
     this.rapidfirevsflakgeschütz = 100;
     this.rapidfirevsartillerie = 100;
     this.rapidfirevslasergeschütz = 50;
@@ -323,11 +323,11 @@ class SchlachtKreuzer extends Unit {
     this.rapidfirevsschlachtschiff = 10;
   }
 }
-class TrägerSchiff extends Unit {
+class TraegerSchiff extends Unit {
   constructor() {
     super();
     this.attackenergy = 100;
-    this.name = "Trägerschiff";
+    this.name = "Traegerschiff";
     this.steelcosts = 1000000;
     this.mikroshipkosten = 400000;
     this.chemicalcost = 200000;
@@ -340,7 +340,7 @@ class TrägerSchiff extends Unit {
     this.ammoconsume = 2500;
     this.hangaring = 9000;
     this.cargo = 500000;
-    this.unittype = Unit.unittype.trägerschiff;
+    this.unittype = Unit.unittype.traegerschiff;
   }
 }
 class FlakGeschütz extends Unit {
@@ -361,8 +361,8 @@ class FlakGeschütz extends Unit {
     this.hangaring = 0;
     this.cargo = 0;
     this.unittype = Unit.unittype.flakgeschuetz;
-    this.rapidfirevsleichterjäger = 20;
-    this.rapidfirevsschwererjäger = 20;
+    this.rapidfirevsleichterjaeger = 20;
+    this.rapidfirevsschwererjaeger = 20;
     this.rapidfirevsbomber = 20;
     this.rapidfirevskleinertransporter = 20;
   }
@@ -471,7 +471,7 @@ class PartikelKanone extends Unit {
     this.unittype = Unit.unittype.partikelkanone;
     this.rapidfirevsschlachtschiff = 5;
     this.rapidfirevszerstörer = 5;
-    this.rapidfirevsträgerschiff = 5;
+    this.rapidfirevstraegerschiff = 5;
     this.rapidfirevsschlachtkreuzer = 5;
   }
 }
@@ -510,7 +510,7 @@ export default {
   BergBauSchiff,
   SchlachtSchiff,
   SchlachtKreuzer,
-  TrägerSchiff,
+  TraegerSchiff,
   FlakGeschütz,
   Artillerie,
   IonenKanone,

@@ -2,7 +2,7 @@
 
 Arbeitsgruppe: Maik, Fabian, Marius
 
-Zeitraum: 20.02.2024 - 27.02.2024, Präsentation am 28.02.2024
+Zeitraum: 20.02.2024 - 27.02.2024, Praesentation am 28.02.2024
 
 ## Planung
 
@@ -20,8 +20,8 @@ Benötigte Seiten HTML/CSS
 - Raumkarte
 - Forschung
 - Armada
-- Zivilgebäude
-- Militärgebäude
+- Zivilgebaeude
+- Militaergebaeude
 
 _erstellt 19.02.2024, Marius Weber_
 
@@ -29,7 +29,7 @@ _erstellt 19.02.2024, Marius Weber_
 
 _21.02.2024 MW:_
 
-- Ändern der Grundstruktur: Section 3 enthält nun ein Grid-System, um später damit flexibler arbeiten zu können.
+- aendern der Grundstruktur: Section 3 enthaelt nun ein Grid-System, um spaeter damit flexibler arbeiten zu können.
 - Verschieben der Grundstruktur in den Ordner Gruppenprojekt (
   Zeitraum: 20.02.2024 - 27.02.2024)
 

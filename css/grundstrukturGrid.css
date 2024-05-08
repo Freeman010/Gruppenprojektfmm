@@ -45,7 +45,7 @@ header {
 }
 
 /* Ressourcen-Bereich
-  1. Elternteil "ressources" erhält 100vw
+  1. Elternteil "ressources" erhaelt 100vw
   2. Kinder "raw-material" und "products" 80vw
   hier ist folgendes zu beachten:
   Beim verkleinern des Bildschirms, gehen die Enkelkinder 

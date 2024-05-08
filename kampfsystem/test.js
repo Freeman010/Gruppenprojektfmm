@@ -7,7 +7,7 @@ function createMenu(options) {
     output: process.stdout,
   });
 
-  console.log("Bitte wählen Sie eine Option:");
+  console.log("Bitte waehlen Sie eine Option:");
 
   options.forEach((option, index) => {
     console.log(`${index + 1}. ${option}`);
@@ -18,16 +18,16 @@ function createMenu(options) {
     if (isNaN(choice) || choice < 1 || choice > options.length) {
       console.log(
         "Ungültige Auswahl. Bitte geben Sie eine Nummer zwischen 1 und " +
-          options.length +
-          " ein."
+        options.length +
+        " ein."
       );
       rl.close();
       return;
     }
-    console.log("Sie haben '" + options[choice - 1] + "' ausgewählt.");
+    console.log("Sie haben '" + options[choice - 1] + "' ausgewaehlt.");
     rl.close();
   });
 }
 
 // Beispielaufruf
-createMenu(["Leichter Jäger", "Schwerer Jäger", "Bomber"]);
+createMenu(["Leichter Jaeger", "Schwerer Jaeger", "Bomber"]);
