@@ -4,12 +4,11 @@ import unit from "./unit.js";
 let attacker = [];
 let defender = [];
 
-function createArmy(shipType, amount) {
-  let result = [];
+function createArmy(shipType, amount, target) {
   for (let i = 0; i < amount; i++) {
-    result.push(new shipType());
+    target.push(new shipType());
   }
-  return result;
+  return target;
 }
 
 function shuffle(units) {
