@@ -1,5 +1,7 @@
 import unitdata from "./unitdata.js";
 import Unit from "./unit.js";
+import readline from 'readline';
+
 
 let currentResources = 5000;
 let currentFleet = [];
@@ -16,8 +18,7 @@ function buyShip(ship) {
   ); 
   console.log(
     "\x1b[1;90m%s\x1b[0m" /*<-- cyan schrift*/,
-    "Verbleibender Stahl:",
-    currentResources
+    "Verbleibender Stahl:", currentResources
   );
 }
 
@@ -72,6 +73,7 @@ function startBuy() {
     ); /*<-- grüne schrift*/
   }
 }
+
 
 startBuy();
 console.log("-".repeat(50)); /*<-- Trennstriche*/
