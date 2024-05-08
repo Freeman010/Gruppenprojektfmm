@@ -2,8 +2,6 @@ import unitdata from "./unitdata.js";
 import unit from "./unit.js";
 import fleet from "./fleet.js";
 
-
-
 function createArmy(shipType, amount, target) {
   for (let i = 0; i < amount; i++) {
     target.push(new shipType());
@@ -24,11 +22,11 @@ function shuffle(units) {
 let attackerArray = [];
 let defenderArray = [];
 createArmy(unitdata.SchwererJaeger, 40, attackerArray);
-createArmy(unitdata.KleinerTransporter, 10, attackerArray)
-createArmy(unitdata.KleinerTransporter, 10, defenderArray)
+createArmy(unitdata.KleinerTransporter, 10, attackerArray);
+createArmy(unitdata.KleinerTransporter, 10, defenderArray);
 createArmy(unitdata.Bomber, 40, defenderArray);
 let attacker = new fleet(attackerArray);
-let defender = new fleet(defenderArray)
+let defender = new fleet(defenderArray);
 
 attacker.setAmmo(50000);
 defender.setAmmo(15000);
@@ -46,21 +44,26 @@ function handleFight(attackerFleet, defenderFleet) {
   let defenderCounter = 0;
   while (attacker.length > 0 && defender.length > 0) {
     if (attackerCantShootCounter > Math.floor(attacker.length / 5)) {
-      console.log(`Der Angriffsflotte ist die munition ausgegangen und sie ist geflohen`);
+      console.log(
+        `Der Angriffsflotte ist die munition ausgegangen und sie ist geflohen`
+      );
       break;
     }
     if (count % 2 === 0) {
       let defenderIndex = Math.floor(Math.random() * defender.length);
       if (attacker[attackerCounter] instanceof unit) {
         if (attacker[attackerCounter].checkAmmo(attackerFleet)) {
-          let isDead = attacker[attackerCounter].angriff(defender[defenderIndex]);
+          let isDead = attacker[attackerCounter].angriff(
+            defender[defenderIndex]
+          );
           if (isDead) {
             defender.splice(defenderIndex, 1);
           }
-        }
-        else {
+        } else {
           attackerCantShootCounter += 1;
-          console.log(`${attacker[attackerCounter].name} hat nicht genug munition zum feuern.`)
+          console.log(
+            `${attacker[attackerCounter].name} hat nicht genug munition zum feuern.`
+          );
         }
 
         attackerCounter++;
@@ -69,13 +72,16 @@ function handleFight(attackerFleet, defenderFleet) {
       let attackerIndex = Math.floor(Math.random() * attacker.length);
       if (defender[defenderCounter] instanceof unit) {
         if (defender[defenderCounter].checkAmmo(defenderFleet)) {
-          let isDead = defender[defenderCounter].angriff(attacker[attackerIndex]);
+          let isDead = defender[defenderCounter].angriff(
+            attacker[attackerIndex]
+          );
           if (isDead) {
             attacker.splice(attackerIndex, 1);
           }
-        }
-        else {
-          console.log(`${defender[defenderCounter].name} hat nicht genug munition zum feuern.`)
+        } else {
+          console.log(
+            `${defender[defenderCounter].name} hat nicht genug munition zum feuern.`
+          );
         }
         defenderCounter++;
       }
@@ -97,28 +103,24 @@ handleFight(attacker, defender);
 console.log(attacker.fleetArray.length);
 console.log(defender.fleetArray.length);
 
-console.log("-----")
+console.log("-----");
 let shipArray = [];
 shipArray.push(unitdata.LeichterJaeger);
 shipArray.push(unitdata.SchlachtKreuzer);
 shipArray.push(unitdata.SchwererJaeger);
 
-
 let currentRessources = 50000;
 
-
-
-let myBuyedShips = []
+let myBuyedShips = [];
 
 while (shipArray.length > 0) {
-  let randomIndex = Math.floor(Math.random() * (shipArray.length))
+  let randomIndex = Math.floor(Math.random() * shipArray.length);
   let randomClass = shipArray[randomIndex];
   let randomShip = new randomClass();
   if (currentRessources - randomShip.steelcosts >= 0) {
     currentRessources -= randomShip.steelcosts;
     myBuyedShips.push(randomShip);
-  }
-  else {
+  } else {
     shipArray.splice(randomIndex, 1);
   }
 }
