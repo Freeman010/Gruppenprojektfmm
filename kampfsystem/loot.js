@@ -1,6 +1,7 @@
 import Unit from "./unit.js";
 import unitdata from "./unitdata.js";
 import teams from "./teams.js";
+import Fleet from "./fleet.js";
 
 /* 
 Lootsystem, das dem Spieler nach erfolgreichem Kampf einen gewissen Wert an Ressourcen gibt.
@@ -43,35 +44,6 @@ let planets = {
 
 /* console.log("Sturmflotte:", teams.sturmFlotte);
 console.log("Titanenbund:", teams.titanenBund); testen, ob der import funktioniert*/
-
-class Fleet {
-  constructor(ships) {
-    this.fleetArray = ships;
-    this.setMaxCargo(ships);
-    this.ammo = this.maxCargo / 2;
-    this.actualCargo = this.ammo + this.ressources;
-  }
-  fleetArray;
-  maxCargo = 0;
-  actualCargo = 0;
-  ressources = 0;
-  ammo = 0;
-  setMaxCargo(fleet) {
-    if (Array.isArray(fleet)) {
-      this.maxCargo = fleet.reduce((accumulator, unit) => {
-        return accumulator + unit.cargo;
-      }, 0);
-    }
-  }
-  setAmmo(ammo) {
-    if (this.actualCargo + ammo <= this.maxCargo) {
-      this.actualCargo += ammo;
-      ammo += ammo;
-    } else {
-      console.log("Du hast nicht genug Frachtraum");
-    }
-  }
-}
 
 const spielerEins = new Fleet(teams.sturmFlotte);
 /* console.log(spielerEins); */
