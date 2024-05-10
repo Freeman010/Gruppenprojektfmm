@@ -1,0 +1,8 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore the inquirer package
+node_modules/inquirer/**
+
+# Ignore the chalk package
+node_modules/chalk/**
