@@ -1,10 +1,36 @@
 import unitdata from "./unitdata.js";
 import Unit from "./unit.js";
-import readline from 'readline';
+import readlineSync from 'readline-sync';
+import chalk from 'chalk';
 
-
-let currentResources = 5000;
+let vault = 0;
+let currentResources = 500000000;
 let currentFleet = [];
+
+console.log("-".repeat(50)); /*<-- Trennstriche*/
+console.log(chalk.red("Willkommen bei Imperial Industries, wir haben eine tolle Auswahl an Schiffblaupausen für sie im Angebot!"));
+
+function playerDecision() {
+  let choices = ['Ressourcen einlagern', 'Schiffe bauen'];
+  let index = readlineSync.keyInSelect(choices, chalk.red("Womit kann ich ihnen heute helfen? Etwas einlagern oder wollen Sie vielleicht neue Schiffe bauen"));
+  switch(index) {
+    case 0: vault += currentResources;
+    console.log(`Sie haben ${chalk.yellow(currentResources)} ${chalk.grey("Einheiten Stahl")} eingelagert. Dein Speicher hat: ${chalk.yellow(vault)} ${chalk.grey("Einheiten Stahl")}`);
+    currentResources = 0;
+    break;
+  case 1: 
+    while (currentResources > 200) {
+    const ship = randomShip();
+    if (canAfford(ship)) {
+      buyShip(ship);
+    } else {
+      removeShip(ship);
+    }
+  }
+  break;
+  default: console.log('Ungueltige Auswahl.');
+  }
+}
 
 function canAfford(ship) {
   return currentResources >= ship.steelcosts;
@@ -13,14 +39,9 @@ function canAfford(ship) {
 function buyShip(ship) {
   currentResources -= ship.steelcosts;
   currentFleet.push(ship);
-  console.log(
-    `Du hast \x1b[32m${ship.name}\x1b[0m gekauft!` /*<-- grüne schrift*/
-  ); 
-  console.log(
-    "\x1b[1;90m%s\x1b[0m" /*<-- cyan schrift*/,
-    "Verbleibender Stahl:", currentResources
-  );
-}
+  console.log(`Du hast ${chalk.green(ship.name)} gebaut!`); 
+  console.log(chalk.grey("Verbleibender Stahl:"), currentResources);
+};
 
 function randomShip() {
   let randomIndex = Math.floor(Math.random() * (unitdata.onlyShips.length - 1));
@@ -36,44 +57,27 @@ function removeShip(ship) {
 
 console.log("-".repeat(50)); /*<-- Trennstriche*/
 
-function startBuy() {
-  console.log(
-    "\x1b[1;91m%s\x1b[0m",
-    /*<-- rote schrift*/ "Willkommen bei Imperial Industries, wir haben eine tolle Auswahl an Schiffen für sie im Angebot!"
-  );
 
-  console.log("-".repeat(50)); /*<-- Trennstriche*/
-
-  while (currentResources > 200) {
-    const ship = randomShip();
-    if (canAfford(ship)) {
-      buyShip(ship);
-    } else {
-      removeShip(ship);
-    }
-  }
-
-  let shipCount = {};
-  currentFleet.forEach((ship) => {
-    if (shipCount[ship.name]) {
-      shipCount[ship.name]++;
-    } else {
-      shipCount[ship.name] = 1;
-    }
-  });
-
-  console.log("-".repeat(50)); /*<-- Trennstriche*/
-
-  console.log(
-    "Keine Schiffe mehr zum Kauf verfügbar.\nDeine momentane Flotte:"
-  );
-  for (let shipName in shipCount) {
-    console.log(
-      `\x1b[32m ${shipName} ${shipCount[shipName]}x \x1b[0m`
-    ); /*<-- grüne schrift*/
-  }
+while (currentResources > 200) {
+  playerDecision();
 }
 
+if (currentResources <= 200) {
+  console.log(`Keine Ressorcem mehr zum Bau verfügbar.\nDeine momentane Flotte:`);
+}
 
-startBuy();
+let shipCount = {};
+currentFleet.forEach((ship) => { // Iterieren Sie über die Schiffe selbst
+  const shipName = ship.name; // Extrahieren Sie den Namen des Schiffs
+  if (shipCount[shipName]) {
+    shipCount[shipName]++;
+  } else {
+    shipCount[shipName] = 1;
+  }
+});
+
+console.log(shipCount);
+//console.log(currentFleet);
+
+//startBuy();
 console.log("-".repeat(50)); /*<-- Trennstriche*/
