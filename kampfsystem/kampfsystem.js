@@ -21,15 +21,17 @@ function shuffle(units) {
 }
 let attackerArray = [];
 let defenderArray = [];
-createArmy(unitdata.SchwererJaeger, 40, attackerArray);
-createArmy(unitdata.KleinerTransporter, 10, attackerArray);
-createArmy(unitdata.KleinerTransporter, 10, defenderArray);
-createArmy(unitdata.Bomber, 40, defenderArray);
-let attacker = new fleet(attackerArray);
-let defender = new fleet(defenderArray);
+createArmy(unitdata.FlugDeckKreuzer, 200, attackerArray);
+createArmy(unitdata.KleinerTransporter, 0, attackerArray);
+createArmy(unitdata.KleinerTransporter, 0, defenderArray);
+createArmy(unitdata.Bomber, 200, defenderArray);
+let attacker = new fleet([]);
+let defender = new fleet([]);
+attacker.addShips(attackerArray);
+defender.addShips(defenderArray);
 
-attacker.setAmmo(50000);
-defender.setAmmo(15000);
+//attacker.setAmmo(50000);
+//defender.setAmmo(15000);
 
 function handleFight(attackerFleet, defenderFleet) {
   const attacker = attackerFleet.fleetArray;
@@ -100,10 +102,12 @@ function handleFight(attackerFleet, defenderFleet) {
 }
 
 handleFight(attacker, defender);
-console.log(attacker.fleetArray.length);
-console.log(defender.fleetArray.length);
+//console.log(attacker.fleetArray.length);
+//console.log(defender.fleetArray.length);
 
-console.log("-----");
+
+
+//console.log("-----");
 let shipArray = [];
 shipArray.push(unitdata.LeichterJaeger);
 shipArray.push(unitdata.SchlachtKreuzer);
@@ -123,6 +127,10 @@ while (shipArray.length > 0) {
   } else {
     shipArray.splice(randomIndex, 1);
   }
+}
+
+export default {
+  handleFight,
 }
 //console.log(attacker.maxCargo);
 //console.log(attacker.ammo);

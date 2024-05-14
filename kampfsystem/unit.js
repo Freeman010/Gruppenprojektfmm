@@ -79,7 +79,7 @@ export default class Unit {
         großertransporter: 7,
         zerstörer: 8,
         kreuzer: 9,
-        flugdeckkreuzer: 0,
+        flugdeckkreuzer: 10,
         kolonieschiff: 11,
         bergbauschiff: 12,
 
@@ -97,7 +97,7 @@ export default class Unit {
     }
 
     damageVersus(enemy) {
-        //console.log(enemy);
+        // console.log(enemy.unittype + " enemy unittype");
         switch (enemy.unittype) {
             case 1:
                 return [this.dmgversusleichterjaeger, this.rapidfirevsleichterjaeger];
@@ -144,17 +144,18 @@ export default class Unit {
             case 22:
                 return [this.dmgversusplanetarerschildgenerator, this.rapidfirevsplanetarerschildgenerator];
             default:
+                //console.log(enemy.unittype);
                 return [0, 0];
         }
     }
     angriff(gegner) {
         let isDead;
+        //console.log(this.attackEnergy + " attackenergy");
         gegner.shield -= this.firepower + this.damageVersus(gegner)[0];
-        let verbleibenderSchild = gegner.shield;
         console.log(`${this.name} greift ${gegner.name} an und fügt ${this.firepower + this.damageVersus(gegner)[0]} Schaden zu.`)
-        console.log(this.damageVersus(gegner)[0]);
-        if (verbleibenderSchild < 0) {
-            gegner.hull += verbleibenderSchild;
+        //console.log(this.damageVersus(gegner)[1] + " rapidfire von " + this.name + " gegen " + gegner.name);
+        if (gegner.shield < 0) {
+            gegner.hull += gegner.shield;
             gegner.shield = 0;
         }
         if (gegner.hull < 0) {
@@ -162,17 +163,21 @@ export default class Unit {
             isDead = true;
             console.log(`${gegner.name} wurde vernichtet!`);
 
-        } else {
+        }
+        else {
             if (this.damageVersus(gegner)[1] > 1 && this.attackEnergy > 0) {
-                this.attackEnergy -= 100 / this.damageVersus(gegner)[1]
+                this.attackEnergy -= (100 / this.damageVersus(gegner)[1])
+                isDead = false;
+                console.log(`${gegner.name} hat noch ${gegner.hull} Hüllenpunkte und ${gegner.shield} Schildpunkte übrig.`)
                 isDead = this.angriff(gegner)
             }
-            isDead = false;
-            console.log(`${gegner.name} hat noch ${gegner.hull} Hüllenpunkte und ${gegner.shield} Schildpunkte übrig.`)
-        }
-        if (this.damageVersus(gegner)[1] > 1) {
+            else {
+                // evtl einfügen nach fehlerbehebung this.attackEnergy = 0;
+            }
 
         }
+        //console.log(this.attackEnergy);
+        //console.log(this.damageVersus(gegner)[1]);
         return isDead;
 
 
