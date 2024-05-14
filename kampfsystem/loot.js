@@ -30,7 +30,7 @@ Beispiel:
 //Festlegen von Loot-Werten der Planeten
 
 let planets = {
-  planetEins: { id: 1, loot: 0, maxLoot: 10000 },
+  planetEins: { id: 1, loot: 5000, maxLoot: 10000 },// loot von 0 auf 5000 geändert
   planetZwei: { id: 2, loot: 20000, maxLoot: 20000 },
   planetDrei: { id: 3, loot: 30000, maxLoot: 30000 },
   planetVier: { id: 4, loot: 40000, maxLoot: 40000 },

@@ -3,7 +3,7 @@ import Unit from "./unit.js";
 class LeichterJaeger extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Leichter Jaeger";
     this.steelcosts = 200;
     this.mikroshipkosten = 0;
@@ -27,7 +27,7 @@ class LeichterJaeger extends Unit {
 class SchwererJaeger extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Schwerer Jaeger";
     this.steelcosts = 800;
     this.mikroshipkosten = 100;
@@ -51,7 +51,7 @@ class SchwererJaeger extends Unit {
 class Bomber extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Bomber";
     this.steelcosts = 1500;
     this.mikroshipkosten = 200;
@@ -85,7 +85,7 @@ class Bomber extends Unit {
 class KleinerTransporter extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Kleiner Transporter";
     this.steelcosts = 500;
     this.mikroshipkosten = 0;
@@ -105,7 +105,7 @@ class KleinerTransporter extends Unit {
 class MiningDrohne extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Miningdrohne";
     this.steelcosts = 500;
     this.mikroshipkosten = 0;
@@ -125,7 +125,7 @@ class MiningDrohne extends Unit {
 class Fregatte extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Fregatte";
     this.steelcosts = 5000;
     this.mikroshipkosten = 500;
@@ -146,7 +146,7 @@ class Fregatte extends Unit {
 class GrosserTransporter extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Großer Transporter";
     this.steelcosts = 5000;
     this.mikroshipkosten = 500;
@@ -166,7 +166,7 @@ class GrosserTransporter extends Unit {
 class Zerstörer extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Zerstörer";
     this.steelcosts = 15000;
     this.mikroshipkosten = 2500;
@@ -183,14 +183,16 @@ class Zerstörer extends Unit {
     this.unittype = Unit.unittype.zerstörer;
     this.dmgversusleichterjaeger = (this.firepower / 100) * -90;
     this.dmgversusschwererjaeger = (this.firepower / 100) * -95;
+    this.dmgversusflugdeckkreuzer = (this.firepower / 100) * 150;
     this.dmgversusbomber = (this.firepower / 100) * -90;
     this.rapidfirevsfregatte = 5;
+    this.rapidfirevsflugdeckkreuzer = 5;
   }
 }
 class Kreuzer extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Kreuzer";
     this.steelcosts = 20000;
     this.mikroshipkosten = 500;
@@ -214,7 +216,7 @@ class Kreuzer extends Unit {
 class FlugDeckKreuzer extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Flugdeckkreuzer";
     this.steelcosts = 50000;
     this.mikroshipkosten = 20000;
@@ -229,12 +231,15 @@ class FlugDeckKreuzer extends Unit {
     this.hangaring = 600;
     this.cargo = 50000;
     this.unittype = Unit.unittype.flugdeckkreuzer;
+    this.unittype = Unit.unittype.flugdeckkreuzer
+    this.dmgversusbomber = (this.firepower / 100) * -90;//TODO löschen
+    this.rapidfirevsbomber = 5;//TODO löschen
   }
 }
 class KolonieSchiff extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Kolonieschiff";
     this.steelcosts = 8000;
     this.mikroshipkosten = 3000;
@@ -254,7 +259,7 @@ class KolonieSchiff extends Unit {
 class BergBauSchiff extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Bergbauschiff";
     this.steelcosts = 20000;
     this.mikroshipkosten = 10000;
@@ -274,7 +279,7 @@ class BergBauSchiff extends Unit {
 class SchlachtSchiff extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Schlachtschiff";
     this.steelcosts = 300000;
     this.mikroshipkosten = 150000;
@@ -305,7 +310,7 @@ class SchlachtSchiff extends Unit {
 class SchlachtKreuzer extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Schlachtkreuzer";
     this.steelcosts = 250000;
     this.mikroshipkosten = 250000;
@@ -326,7 +331,7 @@ class SchlachtKreuzer extends Unit {
 class TraegerSchiff extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Traegerschiff";
     this.steelcosts = 1000000;
     this.mikroshipkosten = 400000;
@@ -346,7 +351,7 @@ class TraegerSchiff extends Unit {
 class FlakGeschütz extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Flakgeschütz";
     this.steelcosts = 300;
     this.mikroshipkosten = 0;
@@ -370,7 +375,7 @@ class FlakGeschütz extends Unit {
 class Artillerie extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Artillerie";
     this.steelcosts = 1000;
     this.mikroshipkosten = 0;
@@ -390,7 +395,7 @@ class Artillerie extends Unit {
 class IonenKanone extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Ionenkanone";
     this.steelcosts = 500;
     this.mikroshipkosten = 1000;
@@ -410,7 +415,7 @@ class IonenKanone extends Unit {
 class LaserGeschütz extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Lasergeschütz";
     this.steelcosts = 5000;
     this.mikroshipkosten = 5000;
@@ -430,7 +435,7 @@ class LaserGeschütz extends Unit {
 class Railgun extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Railgun";
     this.steelcosts = 20000;
     this.mikroshipkosten = 2500;
@@ -453,7 +458,7 @@ class Railgun extends Unit {
 class PartikelKanone extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.attackenergy = 100;
     this.name = "Partikelkanone";
     this.steelcosts = 50000;
@@ -478,7 +483,7 @@ class PartikelKanone extends Unit {
 class PlanetarerSchildGenerator extends Unit {
   constructor() {
     super();
-    this.attackenergy = 100;
+    this.attackEnergy = 100;
     this.name = "Planetarer Schildgenerator";
     this.steelcosts = 100000;
     this.mikroshipkosten = 100000;

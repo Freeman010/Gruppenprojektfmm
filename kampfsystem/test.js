@@ -8,7 +8,7 @@ function createMenu(options) {
   });
 
   console.log("Bitte waehlen Sie eine Option:");
-
+  console.log(options);
   options.forEach((option, index) => {
     console.log(`${index + 1}. ${option}`);
   });
