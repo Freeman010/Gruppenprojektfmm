@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 import chalk from 'chalk';
 
 let vault = 0;
-let currentResources = 60000;
+let currentResources = 10000;
 let currentFleet = [];
 
 console.log("-".repeat(50)); /*<-- Trennstriche*/
