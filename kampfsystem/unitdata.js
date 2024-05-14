@@ -513,7 +513,7 @@ const onlyShips = [
   FlugDeckKreuzer,
   SchlachtSchiff,
   SchlachtKreuzer,
-  TrägerSchiff,
+  TraegerSchiff,
 ];
 
 export default {
