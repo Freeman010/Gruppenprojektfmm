@@ -18,8 +18,8 @@ function createMenu(options) {
     if (isNaN(choice) || choice < 1 || choice > options.length) {
       console.log(
         "Ungültige Auswahl. Bitte geben Sie eine Nummer zwischen 1 und " +
-        options.length +
-        " ein."
+          options.length +
+          " ein."
       );
       rl.close();
       return;
@@ -31,3 +31,13 @@ function createMenu(options) {
 
 // Beispielaufruf
 createMenu(["Leichter Jaeger", "Schwerer Jaeger", "Bomber"]);
+
+// Funktion zum überprüfen der firepower
+
+function calculateFirePower(teamName, array) {
+  let firePower = 0;
+  for (const unit of array) {
+    firePower += unit.firepower || 0;
+  }
+  console.log(`${teamName} Firepower: ${firePower}`);
+}
