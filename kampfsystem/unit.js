@@ -185,14 +185,16 @@ export default class Unit {
     return isDead;
   }
 
-  checkAmmo(fleet) {
-    if (this.ammoconsume <= fleet.ammo) {
-      fleet.ammo -= this.ammoconsume;
-      return true;
-    } else {
-      return false;
+    checkAmmo(fleet) {
+        if (this.ammoconsume <= fleet.ammo) {
+            fleet.ammo -= this.ammoconsume;
+            return true;
+        }
+        else {
+            return false;
+
+        }
     }
-  }
 }
 /*
   static chemicalcost;
