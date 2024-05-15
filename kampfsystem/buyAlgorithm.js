@@ -50,7 +50,7 @@ function playerDecision(currentFleet, conqueredRessources) { /* Readline Sync St
       break;
 
     case 1 /* --------------- 2 Auswahl - Schiffe werden gekauft -> function buyShip --------------- */:
-      while (currentFleet.ressources > 200 && !exit) {
+      while (currentFleet.ressources > 200) {
         const ship = randomShip();
         if (canAfford(ship, currentFleet.ressources)) {
           buyShip(ship, currentFleet);
@@ -113,18 +113,8 @@ function removeShip(ship) {
   }
 }
 
-function createArmy(shipType, amount, target) {
-  for (let i = 0; i < amount; i++) {
-    const newShip = shipType;
-    if (Array.isArray(target)) {
-      target.push(new newShip());
-    }
-  }
-  return [...target];
-}
 
 export function buyAlgorythm(currentFleet, conqueredRessources) { /* Exportierte gesamtfunktion */
-  let currentResources = currentFleet.ressources
   console.log("-".repeat(50)); /*<-- Trennstriche*/
   console.log(chalk.red.bold("Willkommen bei Imperial Industries, wir haben eine tolle Auswahl an Schiffblaupausen für sie im Angebot!"));
   console.log("-".repeat(50)); /*<-- Trennstriche*/
