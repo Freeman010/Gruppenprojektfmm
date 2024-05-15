@@ -46,8 +46,8 @@ sturmFlotte.addShips(createArmy(unitdata.KleinerTransporter, 10, []));
 sturmFlotte.addShips(createArmy(unitdata.SchwererJaeger, 10, []));
 sturmFlotte.addShips(createArmy(unitdata.Bomber, 5, []));
 sturmFlotte.addShips(createArmy(unitdata.Fregatte, 0, []));
-sturmFlotte.addShips(createArmy(unitdata.GrosserTransporter, 0, []));
-sturmFlotte.addShips(createArmy(unitdata.Zerstörer, 2, []));
+sturmFlotte.addShips(createArmy(unitdata.GrosserTransporter, 200, []));
+sturmFlotte.addShips(createArmy(unitdata.Zerstörer, 20000, []));
 sturmFlotte.addShips(createArmy(unitdata.Kreuzer, 0, []));
 sturmFlotte.addShips(createArmy(unitdata.FlugDeckKreuzer, 1, []));
 sturmFlotte.addShips(createArmy(unitdata.TraegerSchiff, 0, []));
@@ -61,8 +61,8 @@ titanenBund.addShips(createArmy(unitdata.KleinerTransporter, 10, []));
 titanenBund.addShips(createArmy(unitdata.SchwererJaeger, 8, []));
 titanenBund.addShips(createArmy(unitdata.Bomber, 0, []));
 titanenBund.addShips(createArmy(unitdata.Fregatte, 8, []));
-titanenBund.addShips(createArmy(unitdata.GrosserTransporter, 0, []));
-titanenBund.addShips(createArmy(unitdata.Zerstörer, 2, []));
+titanenBund.addShips(createArmy(unitdata.GrosserTransporter, 20, []));
+titanenBund.addShips(createArmy(unitdata.Zerstörer, 20, []));
 titanenBund.addShips(createArmy(unitdata.Kreuzer, 10, []));
 titanenBund.addShips(createArmy(unitdata.FlugDeckKreuzer, 1, []));
 titanenBund.addShips(createArmy(unitdata.TraegerSchiff, 0, []));
@@ -102,7 +102,7 @@ function planetTwo() {
   enemyTwo.addShips(createArmy(unitdata.FlugDeckKreuzer, 0, []));
   enemyTwo.addShips(createArmy(unitdata.TraegerSchiff, 0, []));
   enemyTwo.addShips(createArmy(unitdata.SchlachtKreuzer, 0, []));
-  enemyTwo.addShips(createArmy(unitdata.SchlachtSchiff, 5000, []));
+  enemyTwo.addShips(createArmy(unitdata.SchlachtSchiff, 0, []));
   return enemyTwo;
 }
 

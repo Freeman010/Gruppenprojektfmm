@@ -4,6 +4,7 @@ import readline from "readline";
 import Fleet from "./fleet.js";
 import { AsyncLocalStorage } from "async_hooks";
 import Kampfsystem from "./kampfsystem.js";
+import { buyAlgorythm } from "./buyAlgorithm.js";
 class Player {
     constructor(starterFleet) {
         this.getStartFleets();
@@ -24,7 +25,7 @@ class Player {
     isGameWon() {
 
         for (let i = 0; i < this.planetsDone.length; i++) {
-            if (this.planetsDone[i] === false) { winGame = false; break; }
+            if (this.planetsDone[i] === false) { this.winGame = false; break; }
             else { this.winGame = true; }
         }
     }
@@ -33,37 +34,28 @@ class Player {
         this.startFleets.push(teams.sturmFlotte);
     }
 }
-let planets = [
-    { id: 1, loot: 5000, maxLoot: 10000 },// loot von 0 auf 5000 geändert
-    { id: 2, loot: 20000, maxLoot: 20000 },
-    { id: 3, loot: 30000, maxLoot: 30000 },
-    { id: 4, loot: 40000, maxLoot: 40000 },
-    { id: 5, loot: 50000, maxLoot: 50000 },
-    { id: 6, loot: 60000, maxLoot: 60000 },
-    { id: 7, loot: 70000, maxLoot: 70000 },
-    { id: 8, loot: 80000, maxLoot: 80000 },
-    { id: 9, loot: 90000, maxLoot: 90000 },
-    { id: 10, loot: 100000, maxLoot: 100000 },
-];
-
-function getLoot(planetnumber) {
-    // wird aufgerufen, wenn handleFight -> win
-    let loot = planets[planetnumber].loot;
-    if (player.fleet.actualCargo + loot >= player.fleet.maxCargo) {
-        player.fleet.actualCargo += player.fleet.maxCargo - player.fleet.maxCargo;
-        loot = player.fleet.maxCargo - player.fleet.actualCargo;
-
-    } else {
-        player.fleet.actualCargo += loot;
+let planets = [{ id: 1, loot: 5000, maxLoot: 10000 },
+{ id: 2, loot: 2000000, maxLoot: 20000000 },
+{ id: 3, loot: 3000000, maxLoot: 30000000 },
+{ id: 4, loot: 4000000, maxLoot: 40000000 },
+{ id: 5, loot: 5000000, maxLoot: 50000000 },
+{ id: 6, loot: 6000000, maxLoot: 60000000 },
+{ id: 7, loot: 7000000, maxLoot: 70000000 },
+{ id: 8, loot: 8000000, maxLoot: 80000000 },
+{ id: 9, loot: 9000000, maxLoot: 90000000 },
+{ id: 10, loot: 10000000, maxLoot: 100000000, isDone: false }]
+function regenerateLoot() {
+    // wird gecalled,wenn Kampf (erst nach dem aller ersten Kampf) gewonnen wird, um das Loot eines Planeten zu regenerieren
+    player.fightCounter++;
+    for (const planet in planets) {
+        planets[planet].loot += planet * 10000;
+        if (planets[planet].loot > planets[planet].maxLoot) {
+            planets[planet].loot = planets[planet].maxLoot;
+        }
+        return planets[planet].loot;
     }
-    player.fleet.ressources += loot;
-    player.fleet.actualCargo += loot;
-    planets[planetnumber].loot -= loot;
-    planets[planetnumber].loot = planetnumber * 2500;
-    player.planetsDone[planetnumber] = true;
-
-    return loot;
 }
+
 
 async function createMenu(options, callText) {
     const rl = readline.createInterface({
@@ -122,28 +114,31 @@ async function executeMenu() {
         player = new Player(startFleetIndex);
     }
 
-    while (player.fleet.fleetArray > 0 || !player.winGame) {
+    while (player.fleet.fleetArray > 0 || !planets[9].isDone) {
         const targetPlanetId = await createMenu(attackPlanetOptions, "Welchen Planeten greifst du an");
         //Kampfsystem.handleFight(player.fleet, [...teams.planets][targetPlanetId]);
 
         //let result = Kampfsystem.handleFight(player.fleet, teams.planets[targetPlanetId - 1]);
         //let clone = Object.assign({}, userDetails)
         //let defenderFleet = new Fleet([...teams.planets[targetPlanetId - 1].fleetArray]);
-        let defenderPlanet = teams.planets[targetPlanetId - 1]()
+        let defenderPlanet = teams.planets[targetPlanetId - 1]();
         let result = Kampfsystem.handleFight(player.fleet, defenderPlanet);
         player.fightCounter++;
 
         let playerWinFight;
         //console.log("test");
+        let conqueredRessources = 0;
         if (result[0].fleetArray.length > 0 && result[1].fleetArray.length === 0) {
             playerWinFight = true
+            player.planetsDone[targetPlanetId - 1] = true;
 
-            console.log(`Du hast den Kampf gewonnen und ${getLoot(targetPlanetId - 1)} ressourcen erbeutet`)
+            console.log(`Du hast den Kampf gewonnen und ${conqueredRessources = getLoot(targetPlanetId - 1)} ressourcen erbeutet`)
+            if (targetPlanetId - 1 === 9) { break; }
         }
+
         else { playerWinFight = false; }
         console.log(`du hast noch ${player.fleet.fleetArray.length} schiffe verbleibend und ${player.fleet.ammo} Munition übrig`)
-
-        console.log("munition kaufen weiteren planeten angreifen ???")
+        buyAlgorythm(player.fleet, conqueredRessources);
     }
     console.log(`Du hast das Spiel gewonnen , dein Highscore beträgt ${player.fleet.ressources * (100 - player.fightCounter / 10)}`)
     //console.log(player.fleet.fleetArray.length);
@@ -158,6 +153,22 @@ async function executeMenu() {
     //console.log("");
     //console.log(player.fleet);
 }
+function getLoot(planetnumber) {
+    // wird aufgerufen, wenn handleFight -> win
+    let loot = planets[planetnumber].loot;
+    if (player.fleet.actualCargo + loot >= player.fleet.maxCargo) {
+        player.fleet.actualCargo += player.fleet.maxCargo - player.fleet.maxCargo;
+        loot = player.fleet.maxCargo - player.fleet.currentFleet
+    }
+    player.fleet.ressources += loot;
+    player.fleet.actualCargo += loot;
+    planets[planetnumber].loot -= loot;
+    regenerateLoot();
+    player.planetsDone[planetnumber] = true;
+
+    return loot;
+}
+
 console.log(`Wilkommen bei Nebula Odyssey`);
 console.log(`du muzzt zwischen 2 starter Flotten wählen`);
 

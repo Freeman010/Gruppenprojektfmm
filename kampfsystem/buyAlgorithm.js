@@ -115,9 +115,9 @@ const testFleet = new Fleet([])
 testFleet.addShips(createArmy(unitdata.SchwererJaeger, 150, []));
 testFleet.addShips(createArmy(unitdata.GrosserTransporter, 150, []));
 testFleet.ressources += 700500;
-let conqueredRessources = 5000
+//let conqueredRessources = 5000
 
-export function buyAlgorythm(currentFleet) {
+export function buyAlgorythm(currentFleet, conqueredRessources) {
   let currentResources = currentFleet.ressources
   console.log("-".repeat(50)); /*<-- Trennstriche*/
   console.log(chalk.red.bold("Willkommen bei Imperial Industries, wir haben eine tolle Auswahl an Schiffblaupausen für sie im Angebot!"));
@@ -147,4 +147,4 @@ export function buyAlgorythm(currentFleet) {
   console.log("-".repeat(50)); /*<-- Trennstriche*/
 }
 
-buyAlgorythm(testFleet);
+//buyAlgorythm(testFleet,conqueredRessources);
