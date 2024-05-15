@@ -156,7 +156,6 @@ function getLoot(planetnumber) {
         player.fleet.actualCargo += loot;
         planets[planetnumber].loot -= loot;
     }
-    console.log(planets[planetnumber].loot + " planetenloot");
     regenerateLoot();
 
     return loot;
