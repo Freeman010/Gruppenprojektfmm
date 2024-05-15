@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 import chalk from 'chalk';
 
 let vault = 0;
-let currentResources = 10000;
+let currentResources = 100000000;
 let currentFleet = [];
 
 console.log("-".repeat(50)); /*<-- Trennstriche*/
@@ -32,23 +32,23 @@ function playerDecision() {
   }
 }
 
-function canAfford(ship) {
+function canAfford(ship) {  /* fragt ab ob genug Resources vorhanden sind */
   return currentResources >= ship.steelcosts;
 }
 
-function buyShip(ship) {
+function buyShip(ship) {  /* zieht Resources ab und pushed neues ship in die Fleet */
   currentResources -= ship.steelcosts;
   currentFleet.push(ship);
   console.log(`Du hast ${chalk.green(ship.name)} gebaut!`); 
   console.log(chalk.grey("Verbleibender Stahl:"), currentResources);
 };
 
-function randomShip() {
+function randomShip() {  /* wählt ein zufälligen index aus der onlyships liste */
   let randomIndex = Math.floor(Math.random() * (unitdata.onlyShips.length));
   return new unitdata.onlyShips[randomIndex]();
 }
 
-function removeShip(ship) {
+function removeShip(ship) {   /* entfernt ein ship aus der liste */
   const index = unitdata.onlyShips.indexOf(ship);
   if (index !== -1) {
     unitdata.onlyShips.splice(index, 1);
