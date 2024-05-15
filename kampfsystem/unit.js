@@ -184,6 +184,9 @@ export default class Unit {
     }
 
     checkAmmo(fleet) {
+        console.log("innerhalb von checkammo")
+        console.log(this.ammoconsume + " ammoconsume");
+        console.log(fleet.ammo + "fleet.ammo");
         if (this.ammoconsume <= fleet.ammo) {
             fleet.ammo -= this.ammoconsume;
             return true;

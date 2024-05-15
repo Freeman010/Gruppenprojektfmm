@@ -1,7 +1,7 @@
 import unitdata from "./unitdata.js";
 import unit from "./unit.js";
 import fleet from "./fleet.js";
-
+import teams from "./teams.js";
 function createArmy(shipType, amount, target) {
   for (let i = 0; i < amount; i++) {
     target.push(new shipType());
@@ -45,6 +45,9 @@ function handleFight(attackerFleet, defenderFleet) {
   let count = 0;
   let defenderCounter = 0;
   while (attacker.length > 0 && defender.length > 0) {
+    //console.log(attacker.length + " " + defender.length)
+    //console.log(attackerCounter);
+    //console.log(defenderCounter);
     if (attackerCantShootCounter > Math.floor(attacker.length / 5)) {
       console.log(
         `Der Angriffsflotte ist die munition ausgegangen und sie ist geflohen`
@@ -54,6 +57,7 @@ function handleFight(attackerFleet, defenderFleet) {
     if (count % 2 === 0) {
       let defenderIndex = Math.floor(Math.random() * defender.length);
       if (attacker[attackerCounter] instanceof unit) {
+        //while (true) { }
         if (attacker[attackerCounter].checkAmmo(attackerFleet)) {
           let isDead = attacker[attackerCounter].angriff(
             defender[defenderIndex]
@@ -61,7 +65,9 @@ function handleFight(attackerFleet, defenderFleet) {
           if (isDead) {
             defender.splice(defenderIndex, 1);
           }
-        } else {
+          //console.log("nach check ammo zeile 66")
+        }
+        else {
           attackerCantShootCounter += 1;
           console.log(
             `${attacker[attackerCounter].name} hat nicht genug munition zum feuern.`
@@ -70,9 +76,17 @@ function handleFight(attackerFleet, defenderFleet) {
 
         attackerCounter++;
       }
-    } else {
+      else {
+        attackerCounter = 0;
+
+      }
+    }
+    else {
       let attackerIndex = Math.floor(Math.random() * attacker.length);
+      //defenderFleet.ammo = defenderFleet.maxCargo;
+
       if (defender[defenderCounter] instanceof unit) {
+
         if (defender[defenderCounter].checkAmmo(defenderFleet)) {
           let isDead = defender[defenderCounter].angriff(
             attacker[attackerIndex]
@@ -87,6 +101,9 @@ function handleFight(attackerFleet, defenderFleet) {
         }
         defenderCounter++;
       }
+      else {
+        defenderCounter = 0;
+      }
     }
     if (
       attackerCounter >= attacker.length &&
@@ -99,9 +116,10 @@ function handleFight(attackerFleet, defenderFleet) {
     console.log(defender.length); */
     count++;
   }
+  return [attackerFleet, defenderFleet];
 }
 
-handleFight(attacker, defender);
+//handleFight(attacker, defender);
 //console.log(attacker.fleetArray.length);
 //console.log(defender.fleetArray.length);
 
