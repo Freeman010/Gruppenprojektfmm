@@ -150,10 +150,8 @@ export default class Unit {
     }
     angriff(gegner) {
         let isDead;
-        //console.log(this.attackEnergy + " attackenergy");
         gegner.shield -= this.firepower + this.damageVersus(gegner)[0];
         console.log(`${this.name} greift ${gegner.name} an und fügt ${this.firepower + this.damageVersus(gegner)[0]} Schaden zu.`)
-        //console.log(this.damageVersus(gegner)[1] + " rapidfire von " + this.name + " gegen " + gegner.name);
         if (gegner.shield < 0) {
             gegner.hull += gegner.shield;
             gegner.shield = 0;
@@ -171,22 +169,16 @@ export default class Unit {
                 console.log(`${gegner.name} hat noch ${gegner.hull} Hüllenpunkte und ${gegner.shield} Schildpunkte übrig.`)
                 isDead = this.angriff(gegner)
             }
-            else {
-                // evtl einfügen nach fehlerbehebung this.attackEnergy = 0;
-            }
+
 
         }
-        //console.log(this.attackEnergy);
-        //console.log(this.damageVersus(gegner)[1]);
         return isDead;
 
 
     }
 
     checkAmmo(fleet) {
-        console.log("innerhalb von checkammo")
-        console.log(this.ammoconsume + " ammoconsume");
-        console.log(fleet.ammo + "fleet.ammo");
+
         if (this.ammoconsume <= fleet.ammo) {
             fleet.ammo -= this.ammoconsume;
             return true;

@@ -118,7 +118,6 @@ testFleet.ressources += 700500;
 //let conqueredRessources = 5000
 
 export function buyAlgorythm(currentFleet, conqueredRessources) {
-  let currentResources = currentFleet.ressources
   console.log("-".repeat(50)); /*<-- Trennstriche*/
   console.log(chalk.red.bold("Willkommen bei Imperial Industries, wir haben eine tolle Auswahl an Schiffblaupausen für sie im Angebot!"));
 
@@ -129,7 +128,7 @@ export function buyAlgorythm(currentFleet, conqueredRessources) {
     playerDecision(currentFleet, conqueredRessources);
   }
 
-  if (currentResources <= 200) {
+  if (currentFleet.ressources <= 200) {
     console.log(`Keine Ressourcen mehr zum Bauen oder kaufen verfügbar.\n${chalk.underline(`Deine momentane Flotte`)}:`); /* Anzeige der momentanen flotte 1/2 */
   }
   let shipCount = {}; /* zählt Schiffe zusammen */
