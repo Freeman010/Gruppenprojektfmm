@@ -3,12 +3,7 @@ import Unit from "./unit.js";
 import readlineSync from 'readline-sync';
 import chalk from 'chalk';
 import Fleet from "./fleet.js";
-let vault = 0;
 let ammoPrice = 0.1;
-let ammo = 0;
-//let currentResources = 5000;
-//let currentFleet = [];
-
 
 function playerDecision(currentFleet, conqueredRessources) { /* Readline Sync Start - 3 verschiedene auswahlen */
   let exit = false;
@@ -71,7 +66,6 @@ function buyShip(ship, currentFleet) {  /* zieht Resources ab und pushed neues s
 function buyAmmo(ammoPrice, currentFleet) {  /* hier wird die Ammo gekauft */
   let ammoAmount = currentFleet.ressources / ammoPrice;
 
-  //currentFleet.ressources -= ammoPrice * ammoAmount;
   if (currentFleet.actualCargo + ammoAmount <= currentFleet.maxCargo) {
     currentFleet.ammo += ammoAmount;
     currentFleet.actualCargo += ammoAmount;
@@ -84,7 +78,7 @@ function buyAmmo(ammoPrice, currentFleet) {  /* hier wird die Ammo gekauft */
   }
 
 
-  console.log(currentFleet.ressources);
+  console.log(chalk.underline(`Deine aktuellen Ressourcen:`) + " " + chalk.grey.bold(currentFleet.ressources + " Stahl."));
   console.log(`Du hast ${chalk.cyan.bold(ammoAmount + " " + "Munition")} für ${chalk.grey.bold(ammoPrice + " " + "Ressourcen")} pro Einheit gekauft! Du hast jetzt ${chalk.cyan.bold(currentFleet.ammo + " " + "Munition")} .`);
 };
 
@@ -100,7 +94,6 @@ function removeShip(ship) {   /* entfernt ein ship aus der liste */
   }
 }
 
-
 function createArmy(shipType, amount, target) {
   for (let i = 0; i < amount; i++) {
     const newShip = shipType;
@@ -111,17 +104,10 @@ function createArmy(shipType, amount, target) {
   return [...target];
 }
 
-const testFleet = new Fleet([])
-testFleet.addShips(createArmy(unitdata.SchwererJaeger, 150, []));
-testFleet.addShips(createArmy(unitdata.GrosserTransporter, 150, []));
-testFleet.ressources += 700500;
-//let conqueredRessources = 5000
-
-export function buyAlgorythm(currentFleet, conqueredRessources) {
+export function buyAlgorythm(currentFleet, conqueredRessources) { /* Exportierte gesamtfunktion */
   let currentResources = currentFleet.ressources
   console.log("-".repeat(50)); /*<-- Trennstriche*/
   console.log(chalk.red.bold("Willkommen bei Imperial Industries, wir haben eine tolle Auswahl an Schiffblaupausen für sie im Angebot!"));
-
   console.log("-".repeat(50)); /*<-- Trennstriche*/
 
 
