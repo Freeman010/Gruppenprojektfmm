@@ -17,33 +17,33 @@ export default class Fleet {
         }
     }
 
-}
 
-setAmmo(ammo) {
-    if (this.actualCargo + ammo <= this.maxCargo) {
-        this.actualCargo += ammo;
-        this.ammo += ammo;
+
+    setAmmo(ammo) {
+        if (this.actualCargo + ammo <= this.maxCargo) {
+            this.actualCargo += ammo;
+            this.ammo += ammo;
+        }
+        else {
+            console.log("du hast nicht genug frachtraum");
+        }
     }
-    else {
-        console.log("du hast nicht genug frachtraum");
-    }
-}
-addShips(ships) {
-    if (ships instanceof Unit) {
-        this.fleetArray.push(ships);
-        this.ammo += ships.cargo / 2;
-        this.actualCargo += ships.cargo / 2;
-        this.maxCargo += ships.cargo;
+    addShips(ships) {
+        if (ships instanceof Unit) {
+            this.fleetArray.push(ships);
+            this.ammo += ships.cargo / 2;
+            this.actualCargo += ships.cargo / 2;
+            this.maxCargo += ships.cargo;
+
+        }
+        if (Array.isArray(ships)) {
+            ships.forEach(element => {
+                this.fleetArray.push(element);
+                this.ammo += element.cargo / 2;
+                this.actualCargo += element.cargo / 2;
+                this.maxCargo += element.cargo;
+            });
+        }
 
     }
-    if (Array.isArray(ships)) {
-        ships.forEach(element => {
-            this.fleetArray.push(element);
-            this.ammo += element.cargo / 2;
-            this.actualCargo += element.cargo / 2;
-            this.maxCargo += element.cargo;
-        });
-    }
-
-}
 }
