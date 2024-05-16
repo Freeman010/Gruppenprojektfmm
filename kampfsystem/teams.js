@@ -206,9 +206,9 @@ function planetTen() {
   enemyTen.addShips(createArmy(unitData.Zerstörer, 10, []));
   enemyTen.addShips(createArmy(unitData.Kreuzer, 5, []));
   enemyTen.addShips(createArmy(unitData.FlugDeckKreuzer, 5, []));
-  enemyTen.addShips(createArmy(unitData.TraegerSchiff, 1, []));
-  enemyTen.addShips(createArmy(unitData.SchlachtKreuzer, 0, []));
-  enemyTen.addShips(createArmy(unitData.SchlachtSchiff, 1, []));
+  enemyTen.addShips(createArmy(unitData.TraegerSchiff, 5, []));
+  enemyTen.addShips(createArmy(unitData.SchlachtKreuzer, 5, []));
+  enemyTen.addShips(createArmy(unitData.SchlachtSchiff, 5, []));
   return enemyTen;
 }
 

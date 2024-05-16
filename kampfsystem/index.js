@@ -19,17 +19,7 @@ class Player {
     points = 0;
     pointsMultiply = 100;
     fightCounter = 0;
-    winGame = false;
-    isGameWon() {
-        for (let i = 0; i < this.planetsDone.length; i++) {
-            if (this.planetsDone[i] === false) {
-                this.winGame = false;
-                break;
-            } else {
-                this.winGame = true;
-            }
-        }
-    }
+
     getStartFleets() {
         this.startFleets.push(teams.titanenBund);
         this.startFleets.push(teams.sturmFlotte);
@@ -54,6 +44,7 @@ function regenerateLoot() {
     for (let i = 0; i < planets.length; i++) {
         planets[i].loot += (1 + i) * 200000;
     }
+
 }
 
 async function createMenu(options, callText) {
@@ -132,16 +123,28 @@ async function executeMenu() {
                 break;
             }
         }
+        else {
 
+        }
         console.log(
             `du hast noch ${player.fleet.fleetArray.length} schiffe verbleibend und ${player.fleet.ammo} Munition übrig`
         );
+        if (player.fleet.fleetArray.length < 10) {
+            console.log("Deine Flotte wurde Vernichtet du hast verloren");
+            break;
+        }
+        if (targetPlanetId - 1 === 9) {
+            console.log(
+                `Du hast das Spiel gewonnen , dein Highscore beträgt ${player.fleet.ressources * (100 - player.fightCounter / 10)
+                }`
+            )
+            break;
+        }
+        player.fleet.upDate();
         buyAlgorythm(player.fleet, conqueredRessources);
     }
-    console.log(
-        `Du hast das Spiel gewonnen , dein Highscore beträgt ${player.fleet.ressources * (100 - player.fightCounter / 10)
-        }`
-    );
+
+
 }
 function getLoot(planetnumber) {
     // wird aufgerufen, wenn handleFight -> win
