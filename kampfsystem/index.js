@@ -140,7 +140,7 @@ async function executeMenu() {
             )
             break;
         }
-        player.fleet.upDate();
+
         buyAlgorythm(player.fleet, conqueredRessources);
     }
 
